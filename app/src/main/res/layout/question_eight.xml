@@ -76,7 +76,7 @@
             android:textSize="18sp"></RadioButton>
     </RadioGroup>
     <Button
-        android:id="@+id/q5_button"
+        android:id="@+id/q8_button"
         android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="80dp"
