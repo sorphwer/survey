@@ -5,7 +5,87 @@
     android:orientation="vertical">
 
     <!--  Start : Your code should be within this block -->
+    <!--Title-->
+    <TextView
+        android:id="@+id/q1_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50px"
+        android:layout_marginTop="50px"
+        android:text="@string/q1_title"
+        android:textColor="@color/colorTitle"
+        android:textSize="30sp"></TextView>
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50sp"
+        android:layout_marginTop="60sp"
+        android:layout_marginRight="50sp"
+        android:text="@string/q1_content"
+        android:textSize="20sp"></TextView>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100sp"
+        android:layout_marginTop="40sp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="iPhone"
+            android:textSize="20sp"></RadioButton>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nokia"
+            android:textSize="20sp"></RadioButton>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Samsung"
+            android:textSize="20sp"></RadioButton>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MI"
+            android:textSize="20sp"></RadioButton>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lenovo"
+            android:textSize="20sp"></RadioButton>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sony"
+            android:textSize="20sp"></RadioButton>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Others"
+            android:textSize="20sp"></RadioButton>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/wel_button"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/wel_li_3"
+        android:layout_marginLeft="25sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginRight="25sp"
+        android:background="@color/colorPrimary"
+        android:text="NEXT"
+        android:textSize="20sp"></Button>
 
     <!-- END    : Your code should be within this block -->
 

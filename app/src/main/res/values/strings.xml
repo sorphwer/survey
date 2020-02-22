@@ -1,3 +1,48 @@
 <resources>
     <string name="app_name">Survey</string>
+    <string name="welcome_title">WELCOME TO</string>
+    <string name="welcome_subtitle">TAKE PART IN OUR SURVEY!</string>
+    <string name="welcome_ul">Before we start,here are things you should know:</string>
+    <string name="welcome_li_1">- Please be honest when making your choice.</string>
+    <string name="welcome_li_2">- We are just doing a research so you dont have to fake your information.</string>
+    <string name="welcome_li_3">- Please follow the step we designed for you and dont skip any questions.</string>
+
+    <string name="q1_title">Question 1</string>
+    <string name="q1_content">Which brand of phone will you choose if you are going to buy a new one?</string>
+
+    <string name="q2_title">Question 2</string>
+    <string name="q2_content">How much does your phone cost?</string>
+
+    <string name="q3_title">Question 3</string>
+    <string name="q3_content">What kind of phone are you using?</string>
+
+    <string name="q4_title">Question 4</string>
+    <string name="q4_content">What functions does your phone have now?</string>
+    <string name="q4_1">Music functions</string>
+    <string name="q4_2">Photo functions</string>
+    <string name="q4_3">Game functions</string>
+    <string name="q4_4">Business functions(Word,Excel,ect.)</string>
+    <string name="q4_5">GPS functions</string>
+    <string name="q4_6">Data functions(Bluetooth,WLAN,etc.)</string>
+    <string name="q4_7">Others</string>
+
+    <string name="q5_title">Question 5</string>
+    <string name="q5_content">What functions are the most often used</string>
+    <!--Q5 selections are same with Q4-->
+
+    <string name="q6_title">Question 6</string>
+    <string name="q6_content">What function do you expect your phone to have in the future?</string>
+
+    <string name="q7_title">Question 7</string>
+    <string name="q7_content">In which condition will you buy a new phone?</string>
+    <string name="q7_1">When the old phone has been used for a year or two.(But it still works)</string>
+    <string name="q7_2">When the old phone has been used for more than three years.*But it still works)</string>
+    <string name="q7_3">When the old phone breaks down.</string>
+    <string name="q7_4">When a new phone is released</string>
+    <string name="q7_5">Others</string>
+
+    <string name="q8_title">Question 8</string>
+    <string name="q8_content">Which brand of phone will you choose if you are going to buy a new one?</string>
+    
+    <string name="q8_"
 </resources>
