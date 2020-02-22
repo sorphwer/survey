@@ -13,7 +13,7 @@
         android:textSize="30sp"
         android:layout_marginTop="50px"
         android:layout_marginLeft="50px"
-        android:text="@string/q2_title"></TextView>
+        android:text="@string/q3_title"></TextView>
 
 
     <TextView
@@ -33,36 +33,32 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Under 1000"
+            android:text="2G"
             android:textSize="20sp"></RadioButton>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1000-1999"
+            android:text="3G"
             android:textSize="20sp"></RadioButton>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2000-2999"
+            android:text="4G"
             android:textSize="20sp"></RadioButton>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3000-3999"
+            android:text="Others"
             android:textSize="20sp"></RadioButton>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="More than 4000"
-            android:textSize="20sp"></RadioButton>
+
     </RadioGroup>
     <Button
-        android:id="@+id/wel_button"
+        android:id="@+id/q3_button"
         android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/wel_li_3"
-        android:layout_marginTop="100sp"
+        android:layout_marginTop="140sp"
         android:layout_marginLeft="25sp"
         android:layout_marginRight="25sp"
         android:text="NEXT"

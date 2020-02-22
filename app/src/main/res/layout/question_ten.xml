@@ -5,6 +5,64 @@
     android:orientation="vertical">
 
     <!--  Start : Your code should be within this block -->
+    <TextView
+        android:id="@+id/q10_title"
+        android:textColor="@color/colorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="50px"
+        android:text="@string/q10_title"></TextView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60sp"
+        android:layout_marginRight="50sp"
+        android:layout_marginLeft="50sp"
+        android:textSize="20sp"
+        android:text="@string/q10_content"></TextView>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+        android:layout_marginLeft="100sp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q10_1"
+            android:textSize="20sp"></RadioButton>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q10_2"
+            android:textSize="20sp"></RadioButton>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q10_3"
+            android:textSize="20sp"></RadioButton>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q10_4"
+            android:textSize="20sp"></RadioButton>
+
+    </RadioGroup>
+    <Button
+        android:id="@+id/q2_button"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/wel_li_3"
+        android:layout_marginTop="130sp"
+        android:layout_marginLeft="25sp"
+        android:layout_marginRight="25sp"
+        android:text="NEXT"
+        android:textSize="20sp"></Button>
 
 
     <!-- END    : Your code should be within this block -->

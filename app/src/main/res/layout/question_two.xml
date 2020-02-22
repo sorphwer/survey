@@ -6,7 +6,7 @@
 
     <!--  Start : Your code should be within this block -->
     <TextView
-        android:id="@+id/q1_title"
+        android:id="@+id/q2_title"
         android:textColor="@color/colorTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
             android:textSize="20sp"></RadioButton>
     </RadioGroup>
     <Button
-        android:id="@+id/wel_button"
+        android:id="@+id/q2_button"
         android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="80dp"

@@ -27,7 +27,7 @@
     <string name="q4_7">Others</string>
 
     <string name="q5_title">Question 5</string>
-    <string name="q5_content">What functions are the most often used</string>
+    <string name="q5_content">What functions are the most often used?</string>
     <!--Q5 selections are same with Q4-->
 
     <string name="q6_title">Question 6</string>
@@ -45,4 +45,33 @@
     <string name="q8_content">Which brand of phone will you choose if you are going to buy a new one?</string>
     
     <string name="q9_title">Quesiton 9</string>
+    <string name="q9_content">What characteristic do you think is most important to evaluate a phone?</string>
+    <string name="q9_1">Appearance</string>
+    <string name="q9_2">Price</string>
+    <string name="q9_3">Performance</string>
+    <string name="q9_4">Others</string>
+
+    <string name="q10_title">Question 10</string>
+    <string name="q10_content">How old are you?</string>
+    <string name="q10_1">Under 18</string>
+    <string name="q10_2">19-25</string>
+    <string name="q10_3">25-35</string>
+    <string name="q10_4">Beyond 35</string>
+
+    <string name="q11_title">Question 11</string>
+    <string name="q11_content">What is your gender?</string>
+    <string name="q11_1">Male</string>
+    <string name="q11_2">Female</string>
+
+    <string name="q12_title">Question 12</string>
+    <string name="q12_content">How much money do you earn per month?</string>
+    <string name="q12_1">I have not got a job</string>
+    <string name="q12_2">Under 3000</string>
+    <string name="q12_3">3000-5000</string>
+    <string name="q12_4">5000-10000</string>
+    <string name="q12_5">more than 10000</string>
+
+    <string name="end_title">THANK YOU</string>
+    <string name="end_subtitle">FOR YOUR ANSWERS!</string>
+
 </resources>
