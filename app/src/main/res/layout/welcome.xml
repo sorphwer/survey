@@ -78,6 +78,7 @@
 
 
     <CheckBox
+        android:id="@+id/wel_check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/wel_li_3"

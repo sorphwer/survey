@@ -7,9 +7,15 @@ import android.widget.*;
 import android.os.Bundle;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, RadioGroup.OnCheckedChangeListener {
     private Button welButton;
+    private CheckBox welCheck;
+
+
     private Button q1Button;
+    private RadioGroup q1Group;
+
+
     private Button q2Button;
     private Button q3Button;
     private Button q4Button;
@@ -28,9 +34,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome);
+        //findView
         welButton=findViewById(R.id.wel_button);
-        welButton.setOnClickListener(this);
+        welCheck=findViewById(R.id.wel_check);
+        //init button
+        welButton.setEnabled(false);//init button
 
+        //bind listener
+        welCheck.setOnCheckedChangeListener(this);
+        welButton.setOnClickListener(this);
     }
 
     @Override
@@ -38,8 +50,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.wel_button:
                 setContentView(R.layout.question_one);
+                //find view
                 q1Button=findViewById(R.id.q1_button);
+                q1Group=findViewById(R.id.q1_group);
+                //init button
+                q1Button.setEnabled(false);
+                //bind listener
                 q1Button.setOnClickListener(this);
+                q1Group.setOnCheckedChangeListener(this);
                 break;
             case R.id.q1_button:
                 setContentView(R.layout.question_two);
@@ -100,6 +118,60 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 setContentView(R.layout.finish_survey);
 
                 break;
+        }
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        switch (buttonView.getId()){
+            case R.id.wel_check:
+                if(isChecked){
+                    welButton.setEnabled(true);
+                }
+                else{
+                    welButton.setEnabled(false);
+                }
+        }
+    }
+
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        switch (group.getId()){
+            case R.id.q1_group:
+                q1Button.setEnabled(true);
+                switch ((checkedId)){
+                    case R.id.q1_group_iphone:
+                        //"break" is very important here!
+                        //TODO
+                        Toast.makeText(MainActivity.this, "iphone", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.q1_group_nokia:
+                        //TODO
+                        Toast.makeText(MainActivity.this, "nokia", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.q1_group_samsung:
+                        //TODO
+                        Toast.makeText(MainActivity.this, "samsung", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.q1_group_mi:
+                        //TODO
+                        Toast.makeText(MainActivity.this, "MI", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.q1_group_sony:
+                        //TODO
+                        Toast.makeText(MainActivity.this, "sony", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.q1_group_lenovo:
+                        //TODO
+                        Toast.makeText(MainActivity.this, "lenovo", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.q1_group_others:
+                        //TODO
+                        Toast.makeText(MainActivity.this, "others", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                break;
+
         }
     }
 }
