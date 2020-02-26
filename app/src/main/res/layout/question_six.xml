@@ -26,12 +26,17 @@
         android:text="@string/q6_content"></TextView>
 
 <EditText
+    android:id="@+id/q6_edittext"
+    android:singleLine="true"
+    android:hint="Text here"
+    android:maxLength="40"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="20sp"
     android:layout_marginRight="50sp"
     android:layout_marginLeft="50sp"
     android:textSize="20sp">
+
 
 </EditText>
 
@@ -45,6 +50,8 @@
         android:layout_marginLeft="25sp"
         android:layout_marginRight="25sp"
         android:text="NEXT"
+
+
         android:textSize="20sp"></Button>
 
     <!-- END    : Your code should be within this block -->

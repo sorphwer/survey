@@ -25,32 +25,38 @@
         android:textSize="20sp"
         android:text="@string/q2_content"></TextView>
     <RadioGroup
+        android:id="@+id/q2_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40sp"
         android:layout_marginLeft="100sp">
 
         <RadioButton
+            android:id="@+id/q2_group_b1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Under 1000"
             android:textSize="20sp"></RadioButton>
         <RadioButton
+            android:id="@+id/q2_group_b2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1000-1999"
             android:textSize="20sp"></RadioButton>
         <RadioButton
+            android:id="@+id/q2_group_b3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2000-2999"
             android:textSize="20sp"></RadioButton>
         <RadioButton
+            android:id="@+id/q2_group_b4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3000-3999"
             android:textSize="20sp"></RadioButton>
         <RadioButton
+            android:id="@+id/q2_group_b5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="More than 4000"
