@@ -12,9 +12,18 @@
 
     <string name="q2_title">Question 2</string>
     <string name="q2_content">How much does your phone cost?</string>
+    <string name="q2_b1">Under 1000</string>
+    <string name="q2_b2">1000-1999</string>
+    <string name="q2_b3">2000-2999</string>
+    <string name="q2_b4">3000-3999</string>
+    <string name="q2_b5">More than 4000</string>
 
     <string name="q3_title">Question 3</string>
     <string name="q3_content">What kind of phone are you using?</string>
+    <string name="q3_b1">2G</string>
+    <string name="q3_b2">3G</string>
+    <string name="q3_b3">4G</string>
+    <string name="q3_b4">Others</string>
 
     <string name="q4_title">Question 4</string>
     <string name="q4_content">What functions does your phone have now?</string>
@@ -73,5 +82,15 @@
 
     <string name="end_title">THANK YOU</string>
     <string name="end_subtitle">FOR YOUR ANSWERS!</string>
+
+
+    <string name="Brand1">iphone</string>
+    <string name="Brand2">nokia</string>
+    <string name="Brand3">samsung</string>
+    <string name="Brand4">MI</string>
+    <string name="Brand5">sony</string>
+    <string name="Brand6">lenovo</string>
+    <string name="Brand7">others</string>
+
 
 </resources>

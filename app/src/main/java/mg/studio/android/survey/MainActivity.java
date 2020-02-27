@@ -8,6 +8,8 @@ import android.os.Bundle;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, RadioGroup.OnCheckedChangeListener {
+    private SurveyData answer;
+
     private Button welButton;
     private CheckBox welCheck;
 
@@ -56,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        answer=new SurveyData();
         setContentView(R.layout.welcome);
         //findView
         welButton=findViewById(R.id.wel_button);
@@ -127,8 +131,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 q4Check_7.setOnCheckedChangeListener(this);
                 break;
             case R.id.q4_button:
-                //TODO
                 //Collect q4 here.
+                if(q4Check_1.isChecked()){answer.addAnswer(this.getString(R.string.q4_title),this.getString(R.string.q4_1));}
+                if(q4Check_2.isChecked()){answer.addAnswer(this.getString(R.string.q4_title),this.getString(R.string.q4_2));}
+                if(q4Check_3.isChecked()){answer.addAnswer(this.getString(R.string.q4_title),this.getString(R.string.q4_3));}
+                if(q4Check_4.isChecked()){answer.addAnswer(this.getString(R.string.q4_title),this.getString(R.string.q4_4));}
+                if(q4Check_5.isChecked()){answer.addAnswer(this.getString(R.string.q4_title),this.getString(R.string.q4_5));}
+                if(q4Check_6.isChecked()){answer.addAnswer(this.getString(R.string.q4_title),this.getString(R.string.q4_6));}
+                if(q4Check_7.isChecked()){answer.addAnswer(this.getString(R.string.q4_title),this.getString(R.string.q4_7));}
+
                 setContentView(R.layout.question_five);
                 q5Button=findViewById(R.id.q5_button);
                 q5Check_1=findViewById(R.id.q5_group_c1);
@@ -149,8 +160,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 q5Button.setEnabled(false);
                 break;
             case R.id.q5_button:
-                //TODO
+
                 //collect q5 here.
+                //TODO maybe use a loop in list to do this.
+                if(q5Check_1.isChecked()){answer.addAnswer(this.getString(R.string.q5_title),this.getString(R.string.q4_1));}
+                if(q5Check_2.isChecked()){answer.addAnswer(this.getString(R.string.q5_title),this.getString(R.string.q4_2));}
+                if(q5Check_3.isChecked()){answer.addAnswer(this.getString(R.string.q5_title),this.getString(R.string.q4_3));}
+                if(q5Check_4.isChecked()){answer.addAnswer(this.getString(R.string.q5_title),this.getString(R.string.q4_4));}
+                if(q5Check_5.isChecked()){answer.addAnswer(this.getString(R.string.q5_title),this.getString(R.string.q4_5));}
+                if(q5Check_6.isChecked()){answer.addAnswer(this.getString(R.string.q5_title),this.getString(R.string.q4_6));}
+                if(q5Check_7.isChecked()){answer.addAnswer(this.getString(R.string.q5_title),this.getString(R.string.q4_7));}
+
                 setContentView(R.layout.question_six);
                 q6Button=findViewById(R.id.q6_button);
                 q6AnswerText=findViewById(R.id.q6_edittext);
@@ -160,8 +180,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 q6Button.setOnClickListener(this);
                 break;
             case R.id.q6_button:
-                //TODO
+
                 //collect q6 here.
+                answer.setAnswer(this.getString(R.string.q6_title),q6AnswerText.getText().toString());
                 setContentView(R.layout.question_seven);
                 q7Button=findViewById(R.id.q7_button);
                 q7Group=findViewById(R.id.q7_group);
@@ -213,6 +234,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 setContentView(R.layout.finish_survey);
 
                 break;
+            case R.id.end_button:
+                //TODO : call another activity
         }
     }
 
@@ -227,9 +250,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     welButton.setEnabled(false);
                 }
                 break;
-            /*Cases for Checkbox in question 4
+            /**Cases for Checkbox in question 4
              * The summary will be set in button action : q4Button.
-             * These code is for extension
+             * These code is for extension->Maintain the button status.
              */
             case R.id.q4_group_c1:
             case R.id.q4_group_c2:
@@ -285,32 +308,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 switch ((checkedId)){
                     case R.id.q1_group_iphone:
                         //"break" is very important here!
-                        //TODO
-                        Toast.makeText(MainActivity.this, "iphone", Toast.LENGTH_SHORT).show();
+                        answer.setAnswer(this.getString(R.string.q1_title),this.getString(R.string.Brand1));
+                        //Toast.makeText(MainActivity.this, "iphone", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.q1_group_nokia:
-                        //TODO
-                        Toast.makeText(MainActivity.this, "nokia", Toast.LENGTH_SHORT).show();
+                        answer.setAnswer(this.getString(R.string.q1_title),this.getString(R.string.Brand2));
+                        //Toast.makeText(MainActivity.this, "nokia", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.q1_group_samsung:
-                        //TODO
-                        Toast.makeText(MainActivity.this, "samsung", Toast.LENGTH_SHORT).show();
+                        answer.setAnswer(this.getString(R.string.q1_title),this.getString(R.string.Brand3));
+                        //Toast.makeText(MainActivity.this, "samsung", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.q1_group_mi:
-                        //TODO
-                        Toast.makeText(MainActivity.this, "MI", Toast.LENGTH_SHORT).show();
+                        answer.setAnswer(this.getString(R.string.q1_title),this.getString(R.string.Brand4));
+                        //Toast.makeText(MainActivity.this, "MI", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.q1_group_sony:
-                        //TODO
-                        Toast.makeText(MainActivity.this, "sony", Toast.LENGTH_SHORT).show();
+                        answer.setAnswer(this.getString(R.string.q1_title),this.getString(R.string.Brand5));
+                        //Toast.makeText(MainActivity.this, "sony", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.q1_group_lenovo:
-                        //TODO
-                        Toast.makeText(MainActivity.this, "lenovo", Toast.LENGTH_SHORT).show();
+                        answer.setAnswer(this.getString(R.string.q1_title),this.getString(R.string.Brand6));
+                        //Toast.makeText(MainActivity.this, "lenovo", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.q1_group_others:
-                        //TODO
-                        Toast.makeText(MainActivity.this, "others", Toast.LENGTH_SHORT).show();
+                        answer.setAnswer(this.getString(R.string.q1_title),this.getString(R.string.Brand7));
+                        //Toast.makeText(MainActivity.this, "others", Toast.LENGTH_SHORT).show();
                         break;
                 }
                 break;
@@ -318,19 +341,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 q2Button.setEnabled(true);
                 switch (checkedId){
                     case R.id.q2_group_b1:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q2_title),this.getString(R.string.q2_b1));
                         break;
                     case R.id.q2_group_b2:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q2_title),this.getString(R.string.q2_b2));
                         break;
                     case R.id.q2_group_b3:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q2_title),this.getString(R.string.q2_b3));
                         break;
                     case R.id.q2_group_b4:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q2_title),this.getString(R.string.q2_b4));
                         break;
                     case R.id.q2_group_b5:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q2_title),this.getString(R.string.q2_b5));
                         break;
                 }
                 break;
@@ -338,16 +361,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 q3Button.setEnabled(true);
                 switch (checkedId){
                     case R.id.q3_group_b1:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q3_title),this.getString(R.string.q3_b1));
                         break;
                     case R.id.q3_group_b2:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q3_title),this.getString(R.string.q3_b2));
                         break;
                     case R.id.q3_group_b3:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q3_title),this.getString(R.string.q3_b3));
                         break;
                     case R.id.q3_group_b4:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q3_title),this.getString(R.string.q3_b4));
                         break;
                 }
                 break;
@@ -355,19 +378,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 q7Button.setEnabled(true);
                 switch (checkedId){
                     case R.id.q7_group_b1:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q7_title),this.getString(R.string.q7_1));
                         break;
                     case R.id.q7_group_b2:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q7_title),this.getString(R.string.q7_2));
                         break;
                     case R.id.q7_group_b3:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q7_title),this.getString(R.string.q7_3));
                         break;
                     case R.id.q7_group_b4:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q7_title),this.getString(R.string.q7_4));
                         break;
                     case R.id.q7_group_b5:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q7_title),this.getString(R.string.q7_5));
                         break;
                 }
                 break;
@@ -375,25 +398,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 q8Button.setEnabled(true);
                 switch (checkedId){
                     case R.id.q8_group_b1:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q8_title),this.getString(R.string.Brand1));
                         break;
                     case R.id.q8_group_b2:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q8_title),this.getString(R.string.Brand2));
                         break;
                     case R.id.q8_group_b3:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q8_title),this.getString(R.string.Brand3));
                         break;
                     case R.id.q8_group_b4:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q8_title),this.getString(R.string.Brand4));
                         break;
                     case R.id.q8_group_b5:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q8_title),this.getString(R.string.Brand5));
                         break;
                     case R.id.q8_group_b6:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q8_title),this.getString(R.string.Brand6));
                         break;
                     case R.id.q8_group_b7:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q8_title),this.getString(R.string.Brand7));
                         break;
                 }
                 break;
@@ -401,16 +424,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 q9Button.setEnabled(true);
                 switch (checkedId){
                     case R.id.q9_group_b1:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q9_title),this.getString(R.string.q9_1));
                         break;
                     case R.id.q9_group_b2:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q9_title),this.getString(R.string.q9_2));
                         break;
                     case R.id.q9_group_b3:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q9_title),this.getString(R.string.q9_3));
                         break;
                     case R.id.q9_group_b4:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q9_title),this.getString(R.string.q9_4));
                         break;
                 }
                 break;
@@ -418,16 +441,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 q10Button.setEnabled(true);
                 switch (checkedId){
                     case R.id.q10_group_1:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q10_title),this.getString(R.string.q10_1));
                         break;
                     case R.id.q10_group_2:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q10_title),this.getString(R.string.q10_2));
                         break;
                     case R.id.q10_group_3:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q10_title),this.getString(R.string.q10_3));
                         break;
                     case R.id.q10_group_4:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q10_title),this.getString(R.string.q10_4));
                         break;
                 }
                 break;
@@ -435,10 +458,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 q11Button.setEnabled(true);
                 switch (checkedId){
                     case R.id.q11_group_b1:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q11_title),this.getString(R.string.q11_1));
                         break;
                     case R.id.q11_group_b2:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q11_title),this.getString(R.string.q11_2));
                         break;
                 }
                 break;
@@ -446,16 +469,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 q12Button.setEnabled(true);
                 switch (checkedId){
                     case R.id.q12_group_b1:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q12_title),this.getString(R.string.q12_1));
                         break;
                     case R.id.q12_group_b2:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q12_title),this.getString(R.string.q12_2));
                         break;
                     case R.id.q12_group_b3:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q12_title),this.getString(R.string.q12_3));
                         break;
                     case R.id.q12_group_b4:
-                        //TODO
+                        answer.setAnswer(this.getString(R.string.q12_title),this.getString(R.string.q12_4));
+                        break;
+                    case R.id.q12_group_b5:
+                        answer.setAnswer(this.getString(R.string.q12_title),this.getString(R.string.q12_5));
                         break;
                 }
         }
