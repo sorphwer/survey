@@ -14,183 +14,182 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/q1_title"></EditText>
-    <EditText
+        android:text="@string/q1_title"></TextView>
+    <TextView
         android:id="@+id/answer_q1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="">
-    </EditText>
+    </TextView>
 </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/q2_title"></EditText>
-        <EditText
+            android:text="@string/q2_title"></TextView>
+        <TextView
             android:id="@+id/answer_q2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="">
-        </EditText>
+        </TextView>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/q3_title"></EditText>
-        <EditText
+            android:text="@string/q3_title"></TextView>
+        <TextView
             android:id="@+id/answer_q3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="">
-        </EditText>
+        </TextView>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/q4_title"></EditText>
-        <EditText
+            android:text="@string/q4_title"></TextView>
+        <TextView
             android:id="@+id/answer_q4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="">
-        </EditText>
+        </TextView>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/q5_title"></EditText>
-        <EditText
+            android:text="@string/q5_title"></TextView>
+        <TextView
             android:id="@+id/answer_q5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="">
-        </EditText>
+        </TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/q6_title"></EditText>
-        <EditText
+            android:text="@string/q6_title"></TextView>
+        <TextView
             android:id="@+id/answer_q6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="">
-        </EditText>
+        </TextView>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/q7_title"></EditText>
-        <EditText
+            android:text="@string/q7_title"></TextView>
+        <TextView
             android:id="@+id/answer_q7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="">
-        </EditText>
+        </TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/q8_title"></EditText>
-        <EditText
+            android:text="@string/q8_title"></TextView>
+        <TextView
             android:id="@+id/answer_q8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="">
-        </EditText>
+        </TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/q9_title"></EditText>
-        <EditText
+            android:text="@string/q9_title"></TextView>
+        <TextView
             android:id="@+id/answer_q9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="">
-        </EditText>
+        </TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/q10_title"></EditText>
-        <EditText
+            android:text="@string/q10_title"></TextView>
+        <TextView
             android:id="@+id/answer_q10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="">
-        </EditText>
+        </TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/q11_title"></EditText>
-        <EditText
+            android:text="@string/q11_title"></TextView>
+        <TextView
             android:id="@+id/answer_q11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="">
-        </EditText>
+        </TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/q12_title"></EditText>
-        <EditText
+            android:text="@string/q12_title"></TextView>
+        <TextView
             android:id="@+id/answer_q12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="">
-        </EditText>
+        </TextView>
     </LinearLayout>
 </LinearLayout></ScrollView>
