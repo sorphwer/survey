@@ -5,4 +5,5 @@
     <color name="colorAccent">#008577</color>
     <color name="colorPink">#D81B60</color>
     <color name="colorTitle">#000000</color>
+    <color name="gray">#BBBBBB</color>
 </resources>

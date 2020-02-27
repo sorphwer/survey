@@ -2,6 +2,7 @@ package mg.studio.android.survey;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.*;
 import android.os.Bundle;
@@ -52,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button q12Button;
     private RadioGroup q12Group;
+
+    private Button endButton;
 
 
 
@@ -176,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 q6AnswerText=findViewById(R.id.q6_edittext);
                 //q6AnswerText.addTextChangedListener();
 
-                //TODO maybe let button disabled by this EditText when typing, to avoid empty string.
+                //TODO maybe let button disabled by this EditText when typing, to avoid empty string. Now we just allow empty string.
                 q6Button.setOnClickListener(this);
                 break;
             case R.id.q6_button:
@@ -233,9 +236,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.q12_button:
                 setContentView(R.layout.finish_survey);
 
+                endButton=findViewById(R.id.end_button);
+                endButton.setOnClickListener(this);
                 break;
             case R.id.end_button:
-                //TODO : call another activity
+                /**
+                 * This procedure moved collected data into intent of next activity.
+                 * This procedure may also be in onPause().
+                 * Here the main activity has already saved its data (entity answer) while is running, before onPause().
+                 */
+                Intent intent = new Intent(MainActivity.this, Report.class);
+                intent.putExtra("report",answer.getData() );
+                startActivity(intent);
         }
     }
 

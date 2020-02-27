@@ -93,6 +93,7 @@
         android:layout_marginRight="25sp"
         android:background="@color/colorPrimary"
         android:text="NEXT"
+
         android:textSize="20sp"></Button>
 
     <!-- END    : Your code should be within this block -->
