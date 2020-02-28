@@ -62,18 +62,25 @@
             android:text="More than 4000"
             android:textSize="20sp"></RadioButton>
     </RadioGroup>
-    <Button
-        android:id="@+id/q2_button"
-        android:background="@color/colorPrimary"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_below="@id/wel_li_3"
-        android:layout_marginTop="100sp"
-        android:layout_marginLeft="25sp"
-        android:layout_marginRight="25sp"
-        android:text="NEXT"
-        android:textSize="20sp"></Button>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/q2_button"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+
+            android:layout_marginLeft="25sp"
+
+            android:layout_marginRight="25sp"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:text="NEXT"
+
+            android:textSize="20sp"></Button>
+    </RelativeLayout>
 
     <!-- END    : Your code should be within this block -->
 

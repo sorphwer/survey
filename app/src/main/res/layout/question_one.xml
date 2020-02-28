@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
 
     <!--  Start : Your code should be within this block -->
     <!--Title-->
@@ -83,19 +85,25 @@
             android:textSize="20sp"></RadioButton>
     </RadioGroup>
 
-    <Button
-        android:id="@+id/q1_button"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_below="@id/wel_li_3"
-        android:layout_marginLeft="25sp"
-        android:layout_marginTop="20sp"
-        android:layout_marginRight="25sp"
-        android:background="@color/colorPrimary"
-        android:text="NEXT"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/q1_button"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
 
-        android:textSize="20sp"></Button>
+            android:layout_marginLeft="25sp"
 
+            android:layout_marginRight="25sp"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:text="NEXT"
+
+            android:textSize="20sp"></Button>
+    </RelativeLayout>
     <!-- END    : Your code should be within this block -->
 
 </LinearLayout>

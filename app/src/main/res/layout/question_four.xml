@@ -76,19 +76,26 @@
             android:textSize="18sp"></CheckBox>
 
     </RadioGroup>
-    <Button
-        android:id="@+id/q4_button"
-        android:background="@color/colorPrimary"
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_below="@id/wel_li_3"
-        android:layout_marginTop="50sp"
-        android:layout_marginLeft="25sp"
-        android:layout_marginRight="25sp"
-        android:text="NEXT"
-        android:textSize="20sp"></Button>
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/q4_button"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
 
+            android:layout_marginLeft="25sp"
 
+            android:layout_marginRight="25sp"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:text="NEXT"
+
+            android:textSize="20sp"></Button>
+    </RelativeLayout>
 
     <!-- END    : Your code should be within this block -->
 
