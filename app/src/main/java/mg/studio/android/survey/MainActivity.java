@@ -3,9 +3,14 @@ package mg.studio.android.survey;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import android.os.Bundle;
+
+import java.io.File;
+import java.io.FileOutputStream;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, RadioGroup.OnCheckedChangeListener {
@@ -55,6 +60,47 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RadioGroup q12Group;
 
     private Button endButton;
+    public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+
+    /* Checks if external storage is available to at least read */
+    public boolean isExternalStorageReadable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state) ||
+                Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+    public void showDir(){
+
+        if(isExternalStorageWritable()&&isExternalStorageReadable()){
+            //internal
+            //https://developer.android.com/training/data-storage/files/internal?hl=zh-cn
+            //2020-02-29 15:13:55.492 1659-1659/mg.studio.android.survey I/Internal Dir: file_dir=/data/user/0/mg.studio.android.survey/files
+            File filesDir = getFilesDir();
+            Log.i("Internal Dir","file_dir="+filesDir);
+
+            //external
+            //https://developer.android.com/training/data-storage/files/external?hl=zh-cn#java
+            //2020-02-29 15:13:55.525 1659-1659/mg.studio.android.survey I/External: externalFileDir = /storage/emulated/0/Android/data/mg.studio.android.survey/files
+            //2020-02-29 15:13:55.531 1659-1659/mg.studio.android.survey I/ExternalCustom: externalFileDir = /storage/emulated/0/Android/data/mg.studio.android.survey/files/Reports
+            File externalFilesDir = getExternalFilesDir(null);
+            Log.i("External", "externalFileDir = "+externalFilesDir);
+
+            File externalFilesDirCustom = getExternalFilesDir("Reports");
+            Log.i("ExternalCustom", "externalFileDir = "+externalFilesDirCustom);
+        }
+        else{
+            Log.e("File","External Storage Unavailable");
+        }
+
+    }
 
 
 
@@ -73,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //bind listener
         welCheck.setOnCheckedChangeListener(this);
         welButton.setOnClickListener(this);
+        //showDir();
     }
 
     @Override
@@ -245,6 +292,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                  * This procedure may also be in onPause().
                  * Here the main activity has already saved its data (entity answer) while is running, before onPause().
                  */
+
+
+
                 Intent intent = new Intent(MainActivity.this, Report.class);
                 intent.putExtra("report",answer.getData() );
                 startActivity(intent);

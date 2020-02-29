@@ -4,21 +4,30 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
+import android.view.View;
 import android.widget.*;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Report extends AppCompatActivity {
+import java.io.File;
+import java.io.FileOutputStream;
+
+public class Report extends AppCompatActivity implements View.OnClickListener {
     private Intent intent;
     private String jsonString;
     private TextView reportText;
     private JSONObject answer;
     private ListView listView;
-    private BaseAdapter baseAdapter;//TODO
+    //private BaseAdapter baseAdapter;//TODO
+
+    private Button downloadButton;
 
     private TextView a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12;
+
+    String filename,filecontent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +46,9 @@ public class Report extends AppCompatActivity {
         a10=findViewById(R.id.answer_q10);
         a11=findViewById(R.id.answer_q11);
         a12=findViewById(R.id.answer_q12);
+        downloadButton=findViewById(R.id.download_button);
+        downloadButton.setOnClickListener(this);
+
         //reportText=findViewById(R.id.report_text);
         //reportText.setText(jsonString);
         try{
@@ -64,4 +76,47 @@ public class Report extends AppCompatActivity {
 
 
     }
+    public void SaveToSD(String name, String content)throws Exception{
+
+        File file=new File(getExternalFilesDir("Survey_Report"),name);
+
+        FileOutputStream outStream=new FileOutputStream(file);
+        Log.i("info","Saved into (SD Card)"+file);
+        outStream.write(content.getBytes());
+        outStream.close();
+    }
+
+    public void SaveToInternal(String name,String content)throws Exception{
+
+        File file=new File(getFilesDir(),name);
+
+        FileOutputStream outStream=new FileOutputStream(file);
+        Log.i("info","Saved into (Internal)"+file);
+        outStream.write(content.getBytes());
+        outStream.close();
+    }
+    @Override
+    public void onClick(View v) {
+        try{
+            filename=answer.get("Date").toString();
+            filename=filename+".json";
+            filecontent=answer.toString();
+        }catch (JSONException e) {
+            Log.e("ReportActivity", "unexpected JSON exception", e);
+        }
+
+        try{
+            SaveToSD(filename,filecontent);
+
+            SaveToInternal(filename,filecontent);
+           // Log.i("info","Saved into internal ");
+        }catch (Exception e){
+           // Log.e("FileSave","unexpected file save exception",e);
+        }
+
+
+    }
+
+
+
 }

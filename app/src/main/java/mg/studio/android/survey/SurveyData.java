@@ -17,7 +17,7 @@ public class SurveyData {
     private JSONObject Data;
     SurveyData(){
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");// HH:mm:ss
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");// HH:mm:ss
         Date date = new Date(System.currentTimeMillis());
         try{
             Data=new JSONObject();
