@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button nextButton;
     private int QuestionNum;
     private int flag=0;
+    private int dyCounter=0;
     //TODO dyTextInput
 
     public boolean isExternalStorageWritable() {
@@ -154,7 +155,76 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public  void nextClick(View view){
+        JsonParser jp = new JsonParser(json);
+        //Collect answers of last question ↓
+        String currentoptions[] = jp.getQuestionOptions(flag);
+        if(jp.getQuestionType(flag).equals(TYPE_SINGLE)){
+            Log.i("Json","Single type confirmed");
+            for(int i =0;i<jp.getOptionsNumber(flag);i++){
+                Log.i("Json","Checking option "+String.valueOf(i));
+                if(SingleButtons[i].isChecked()){
+                    answer.setAnswer(dyTitle.getText().toString(),currentoptions[i]);
+                    Log.i("Json","Answer saved:"+currentoptions[i]);
+                }
+            }
+        }
+        else if(jp.getQuestionType(flag).equals(TYPE_MULTI)){
+            Log.i("Json","Multi type confirmed");
+            for(int i =0;i<jp.getOptionsNumber(flag);i++){
+                Log.i("Json","Checking option "+String.valueOf(i));
+                if(MultiButtons[i].isChecked()){
+                    answer.addAnswer(dyTitle.getText().toString(),currentoptions[i]);
+                    Log.i("Json","Answer added:"+currentoptions[i]);
+                }
+            }
+        }
+
+        //Collect answers of last question ↑
         //TODO: check if next question available.
+        //Get next question   ↓
+        flag+=1;
+
+        if(flag==QuestionNum){
+            setContentView(R.layout.finish_survey);
+            endButton=findViewById(R.id.end_button);
+            endButton.setOnClickListener(this);
+        }
+        else{
+            hideAll();
+            dyTitle.setText("Question "+String.valueOf(flag+1));
+            dyContent.setText(jp.getQuestionTitle(flag));
+            nextButton.setEnabled(false);
+
+            dyContent.setText(jp.getQuestionTitle(flag));
+            dyTitle.setText("Question"+String.valueOf(flag+1));
+            String type = jp.getQuestionType(flag);
+            Log.i("JP","type founded: "+type);
+            Log.i("JP",type);
+
+            if(type.equals(TYPE_SINGLE)){
+                int num = jp.getOptionsNumber(flag);
+                //if(num>7){num=7;}
+                String options[]=jp.getQuestionOptions(flag);
+                for(int i =0;i<num;i++) {
+                    SingleButtons[i].setText(options[i]);
+                    SingleButtons[i].setVisibility(View.VISIBLE);
+                    Log.i("JP", "RadioButton" + i + " enabled");
+                }
+
+            }
+            if(type.equals(TYPE_MULTI)){
+                int num = jp.getOptionsNumber(flag);
+                //if(num>7){num=7;}
+                String options[]=jp.getQuestionOptions(flag);
+                for(int i =0;i<num;i++) {
+                    MultiButtons[i].setText(options[i]);
+                    MultiButtons[i].setVisibility(View.VISIBLE);
+                    Log.i("JP", "Checkbox" + i + " enabled");
+                }
+
+            }
+            //TODO TEXT
+        }
     }
 
     @Override
@@ -170,6 +240,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 MultiList=findViewById(R.id.dy_multi);
 
                 nextButton=findViewById(R.id.next_button);
+                nextButton.setEnabled(false);
 
 
                 SingleButtons[0]=findViewById(R.id.dy_single_b1);
@@ -187,6 +258,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 MultiButtons[5]=findViewById(R.id.dy_multi_b6);
                 MultiButtons[6]=findViewById(R.id.dy_multi_b7);
                 hideAll();
+                for(int i=0;i<7;i++){
+                    MultiButtons[i].setOnCheckedChangeListener(this);
+
+                }
+                dySingleGroup=findViewById(R.id.dy_single_group);
+                dySingleGroup.setOnCheckedChangeListener(this);
                 //TEXTLIST
 
                 //init first questions with flag
@@ -458,6 +535,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 break;
+            case R.id.dy_multi_b1:
+            case R.id.dy_multi_b2:
+            case R.id.dy_multi_b3:
+            case R.id.dy_multi_b4:
+            case R.id.dy_multi_b5:
+            case R.id.dy_multi_b6:
+            case R.id.dy_multi_b7:
+                if(isChecked){
+                    dyCounter++;
+                }
+                else{
+                    dyCounter--;
+                }
+                if(dyCounter!=0){
+                    nextButton.setEnabled(true);
+                }
+                else{
+                    nextButton.setEnabled(false);
+                }
+
+                break;
+
+
         }
     }
 
@@ -645,6 +745,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         answer.setAnswer(this.getString(R.string.q12_title),this.getString(R.string.q12_5));
                         break;
                 }
+            case R.id.dy_single_group:
+                nextButton.setEnabled(true);
+
         }
     }
 }

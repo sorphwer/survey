@@ -57,7 +57,7 @@ public class Report extends AppCompatActivity implements View.OnClickListener {
             Log.e("ReportActivity", "unexpected JSON exception", e);
         }
 
-        try{
+        /*try{
             a1.setText(answer.get(this.getString(R.string.q1_title)).toString());
             a2.setText(answer.get(this.getString(R.string.q2_title)).toString());
             a3.setText(answer.get(this.getString(R.string.q3_title)).toString());
@@ -73,6 +73,11 @@ public class Report extends AppCompatActivity implements View.OnClickListener {
         }catch (JSONException e) {
             Log.e("ReportActivity", "unexpected JSON exception", e);
         }
+
+         */
+
+            a1.setText(jsonString);
+
 
 
     }
