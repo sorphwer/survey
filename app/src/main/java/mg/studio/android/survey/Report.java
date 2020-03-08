@@ -95,7 +95,7 @@ public class Report extends AppCompatActivity implements View.OnClickListener {
 
         File file=new File(getFilesDir(),name);
 
-        FileOutputStream outStream=new FileOutputStream(file);
+        FileOutputStream outStream=new FileOutputStream(file,true);
         Log.i("info","Saved into (Internal)"+file);
         outStream.write(content.getBytes());
         outStream.close();
