@@ -94,9 +94,10 @@
 
     <LinearLayout
         android:id="@+id/dy_multi"
+        android:layout_marginTop="-290dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
+
         android:orientation="vertical">
         <RadioGroup
             android:id="@+id/dy_multi_group"

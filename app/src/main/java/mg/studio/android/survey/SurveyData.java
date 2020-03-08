@@ -12,7 +12,7 @@ import java.util.Date;
 This class maintain a JSON entity to save single survey result.
 * */
 
-
+//maintain a jsonobject to save survey report
 public class SurveyData {
     private JSONObject Data;
     SurveyData(){

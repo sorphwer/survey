@@ -62,13 +62,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button endButton;
 
 
-    public static  String json ="{\"survey\":{\"id\":\"12344134\",\"len\":\"2\",\"questions\":[{\"type\":\"single\",\"question\":\"How well do the professors teach at this university?\",\"options\":[{\"1\":\"Extremely well\"},{\"2\":\"Very well\"}]},{\"type\":\"single\",\"question\":\"How effective is the teaching outside yur major at the univesrity?\",\"options\":[{\"1\":\"Extremetly effective\"},{\"2\":\"Very effective\"},{\"3\":\"Somewhat effective\"},{\"4\":\"Not so effective\"},{\"5\":\"Not at all effective\"}]}]}}";
+    public static  String json ="{\"survey\":{\"id\":\"12344134\",\"len\":\"2\",\"questions\":[{\"type\":\"single\",\"question\":\"How well do the professors teach at this university?\",\"options\":[{\"1\":\"Extremely well\"},{\"2\":\"Very well\"}]},{\"type\":\"multi\",\"question\":\"How effective is the teaching outside yur major at the univesrity?\",\"options\":[{\"1\":\"Extremetly effective\"},{\"2\":\"Very effective\"},{\"3\":\"Somewhat effective\"},{\"4\":\"Not so effective\"},{\"5\":\"Not at all effective\"}]}]}}";
 
     public static String TYPE_SINGLE ="single";
     public static String TYPE_MULTI="multi";
     public static String TYPE_TEXT="text";
 
-    private LinearLayout SingleList,MultiList,TextList;
+    //private LinearLayout SingleList,MultiList,TextList;
     private RadioGroup dySingleGroup, dyMultiGroup;
     private RadioButton[] SingleButtons = new RadioButton[7];
     private CheckBox[] MultiButtons = new CheckBox[7];
@@ -213,6 +213,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
             if(type.equals(TYPE_MULTI)){
+
                 int num = jp.getOptionsNumber(flag);
                 //if(num>7){num=7;}
                 String options[]=jp.getQuestionOptions(flag);
@@ -234,10 +235,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //setContentView(R.layout.question_one);
                 setContentView(R.layout.question_dynamic);
                 //for this page is called by wel_button, so it must be the 1st question.
+                //init all conponents in dynamic layout↓
                 dyTitle=findViewById(R.id.dy_title);
                 dyContent=findViewById(R.id.dy_content);
-                SingleList=findViewById(R.id.dy_single);
-                MultiList=findViewById(R.id.dy_multi);
+                //SingleList=findViewById(R.id.dy_single);
+                //MultiList=findViewById(R.id.dy_multi);
 
                 nextButton=findViewById(R.id.next_button);
                 nextButton.setEnabled(false);

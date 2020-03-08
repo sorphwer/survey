@@ -102,16 +102,15 @@ public class Report extends AppCompatActivity implements View.OnClickListener {
     }
     @Override
     public void onClick(View v) {
-        try{
-            filename=answer.get("Date").toString();
+
+            //filename=answer.get("Date").toString();
+            filename="results";
             filename=filename+".json";
             filecontent=answer.toString();
-        }catch (JSONException e) {
-            Log.e("ReportActivity", "unexpected JSON exception", e);
-        }
+
 
         try{
-            SaveToSD(filename,filecontent);
+            //SaveToSD(filename,filecontent);
 
             SaveToInternal(filename,filecontent);
            // Log.i("info","Saved into internal ");
