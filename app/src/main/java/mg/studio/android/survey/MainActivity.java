@@ -60,6 +60,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RadioGroup q12Group;
 
     private Button endButton;
+
+
+    public static  String json ="{\"survey\":{\"id\":\"12344134\",\"len\":\"2\",\"questions\":[{\"type\":\"single\",\"question\":\"How well do the professors teach at this university?\",\"options\":[{\"1\":\"Extremely well\"},{\"2\":\"Very well\"}]},{\"type\":\"single\",\"question\":\"How effective is the teaching outside yur major at the univesrity?\",\"options\":[{\"1\":\"Extremetly effective\"},{\"2\":\"Very effective\"},{\"3\":\"Somewhat effective\"},{\"4\":\"Not so effective\"},{\"5\":\"Not at all effective\"}]}]}}";
+
+    public static String TYPE_SINGLE ="single";
+    public static String TYPE_MULTI="multi";
+    public static String TYPE_TEXT="text";
+
+    private LinearLayout SingleList,MultiList,TextList;
+    private RadioGroup dySingleGroup, dyMultiGroup;
+    private RadioButton[] SingleButtons = new RadioButton[7];
+    private CheckBox[] MultiButtons = new CheckBox[7];
+    private TextView dyTitle, dyContent;
+    private Button nextButton;
+    private int QuestionNum;
+    private int flag=0;
+    //TODO dyTextInput
+
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(state)) {
@@ -120,21 +138,102 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         welCheck.setOnCheckedChangeListener(this);
         welButton.setOnClickListener(this);
         //showDir();
+
+        JsonParser jp = new JsonParser(json);
+        QuestionNum = jp.getQuestionNumber();
+        //String c[] = jp.getQuestionContent(0);
+        //Log.i("MAIN","Get title: "+jp.getQuestionTitle(0));
+        //Log.i("MAIN","Get type: "+jp.getQuestionType(0));
+    }
+
+    public void hideAll(){
+        for(int i =0;i<7;i++){
+            SingleButtons[i].setVisibility(View.INVISIBLE);
+            MultiButtons[i].setVisibility(View.INVISIBLE);
+        }
+    }
+
+    public  void nextClick(View view){
+        //TODO: check if next question available.
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.wel_button:
-                setContentView(R.layout.question_one);
+                //setContentView(R.layout.question_one);
+                setContentView(R.layout.question_dynamic);
+                //for this page is called by wel_button, so it must be the 1st question.
+                dyTitle=findViewById(R.id.dy_title);
+                dyContent=findViewById(R.id.dy_content);
+                SingleList=findViewById(R.id.dy_single);
+                MultiList=findViewById(R.id.dy_multi);
+
+                nextButton=findViewById(R.id.next_button);
+
+
+                SingleButtons[0]=findViewById(R.id.dy_single_b1);
+                SingleButtons[1]=findViewById(R.id.dy_single_b2);
+                SingleButtons[2]=findViewById(R.id.dy_single_b3);
+                SingleButtons[3]=findViewById(R.id.dy_single_b4);
+                SingleButtons[4]=findViewById(R.id.dy_single_b5);
+                SingleButtons[5]=findViewById(R.id.dy_single_b6);
+                SingleButtons[6]=findViewById(R.id.dy_single_b7);
+                MultiButtons[0]=findViewById(R.id.dy_multi_b1);
+                MultiButtons[1]=findViewById(R.id.dy_multi_b2);
+                MultiButtons[2]=findViewById(R.id.dy_multi_b3);
+                MultiButtons[3]=findViewById(R.id.dy_multi_b4);
+                MultiButtons[4]=findViewById(R.id.dy_multi_b5);
+                MultiButtons[5]=findViewById(R.id.dy_multi_b6);
+                MultiButtons[6]=findViewById(R.id.dy_multi_b7);
+                hideAll();
+                //TEXTLIST
+
+                //init first questions with flag
+                JsonParser jp = new JsonParser(json);
+                dyContent.setText(jp.getQuestionTitle(flag));
+                dyTitle.setText("Question"+String.valueOf(flag+1));
+                String type = jp.getQuestionType(flag);
+                Log.i("JP","type founded: "+type);
+                Log.i("JP",type);
+
+                if(type.equals(TYPE_SINGLE)){
+                    int num = jp.getOptionsNumber(flag);
+                    //if(num>7){num=7;}
+                    String options[]=jp.getQuestionOptions(flag);
+                    for(int i =0;i<num;i++) {
+                        SingleButtons[i].setText(options[i]);
+                        SingleButtons[i].setVisibility(View.VISIBLE);
+                        Log.i("JP", "RadioButton" + i + " enabled");
+                    }
+
+                }
+                if(type.equals(TYPE_MULTI)){
+                    int num = jp.getOptionsNumber(flag);
+                    //if(num>7){num=7;}
+                    String options[]=jp.getQuestionOptions(flag);
+                    for(int i =0;i<num;i++) {
+                        MultiButtons[i].setText(options[i]);
+                        MultiButtons[i].setVisibility(View.VISIBLE);
+                        Log.i("JP", "Checkbox" + i + " enabled");
+                    }
+
+                }
+                //TODO TEXT
+
+
+
+
+
+
                 //find view
-                q1Button=findViewById(R.id.q1_button);
-                q1Group=findViewById(R.id.q1_group);
+                //q1Button=findViewById(R.id.q1_button);
+                //q1Group=findViewById(R.id.q1_group);
                 //init button
-                q1Button.setEnabled(false);
+                //q1Button.setEnabled(false);
                 //bind listener
-                q1Button.setOnClickListener(this);
-                q1Group.setOnCheckedChangeListener(this);
+                //q1Button.setOnClickListener(this);
+                //q1Group.setOnCheckedChangeListener(this);
                 break;
             case R.id.q1_button:
                 setContentView(R.layout.question_two);
