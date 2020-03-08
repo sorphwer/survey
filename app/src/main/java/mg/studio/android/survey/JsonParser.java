@@ -18,6 +18,7 @@ public class JsonParser {
             length = Integer.parseInt(survey.get("len").toString());
             questionsArray = survey.getJSONArray("questions");
             questions = new JSONObject[length];
+           // Log.i("JP","Parsed successfully with "+String.valueOf(length)+" Questions");
             for(int i =0;i < questionsArray.length();i++){
                 questions[i]=questionsArray.getJSONObject(i);
             }

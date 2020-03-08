@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button endButton;
 
 
-    public static  String json ="{\"survey\":{\"id\":\"12344134\",\"len\":\"2\",\"questions\":[{\"type\":\"single\",\"question\":\"How well do the professors teach at this university?\",\"options\":[{\"1\":\"Extremely well\"},{\"2\":\"Very well\"}]},{\"type\":\"multi\",\"question\":\"How effective is the teaching outside yur major at the univesrity?\",\"options\":[{\"1\":\"Extremetly effective\"},{\"2\":\"Very effective\"},{\"3\":\"Somewhat effective\"},{\"4\":\"Not so effective\"},{\"5\":\"Not at all effective\"}]}]}}";
+    public static  String json ="{\"survey\":{\"id\":\"12344134\",\"len\":\"4\",\"questions\":[{\"type\":\"single\",\"question\":\"How well do the professors teach at this university?\",\"options\":[{\"1\":\"Extremely well\"},{\"2\":\"Very well\"}]},{\"type\":\"single\",\"question\":\"How effective is the teaching outside yur major at the univesrity?\",\"options\":[{\"1\":\"Extremetly effective\"},{\"2\":\"Very effective\"},{\"3\":\"Somewhat effective\"},{\"4\":\"Not so effective\"},{\"5\":\"Not at all effective\"}]},{\"type\":\"multi\",\"question\":\"multi Test\",\"options\":[{\"1\":\"Extremetly effective\"},{\"2\":\"Very effective\"},{\"3\":\"Somewhat effective\"},{\"4\":\"Not so effective\"},{\"5\":\"Not at all effective\"}]},{\"type\":\"text\",\"question\":\"text test\"}]}}";
 
     public static String TYPE_SINGLE ="single";
     public static String TYPE_MULTI="multi";
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private int QuestionNum;
     private int flag=0;
     private int dyCounter=0;
-    //TODO dyTextInput
+    private EditText dyTextInput;
 
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
@@ -152,6 +152,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             SingleButtons[i].setVisibility(View.INVISIBLE);
             MultiButtons[i].setVisibility(View.INVISIBLE);
         }
+        dyTextInput.setVisibility(View.INVISIBLE);
     }
 
     public  void nextClick(View view){
@@ -177,6 +178,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Log.i("Json","Answer added:"+currentoptions[i]);
                 }
             }
+        }
+        if(jp.getQuestionType(flag).equals(TYPE_TEXT)){
+
+            answer.addAnswer(dyTitle.getText().toString(),dyTextInput.getText().toString());
+            dyTextInput.setText("");
         }
 
         //Collect answers of last question ↑
@@ -224,7 +230,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
             }
-            //TODO TEXT
+            if(type.equals(TYPE_TEXT)){
+                Log.i("Json","text type confirmed");
+                dyTextInput.setVisibility(View.VISIBLE);
+                nextButton.setEnabled(true);
+            }
         }
     }
 
@@ -259,6 +269,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 MultiButtons[4]=findViewById(R.id.dy_multi_b5);
                 MultiButtons[5]=findViewById(R.id.dy_multi_b6);
                 MultiButtons[6]=findViewById(R.id.dy_multi_b7);
+                dyTextInput=findViewById(R.id.dy_textinput);
                 hideAll();
                 for(int i=0;i<7;i++){
                     MultiButtons[i].setOnCheckedChangeListener(this);
@@ -298,7 +309,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
 
                 }
-                //TODO TEXT
+                if(type.equals(TYPE_TEXT)){
+
+                    dyTextInput.setVisibility(View.VISIBLE);
+                    nextButton.setEnabled(true);
+                }
+
 
 
 

@@ -155,6 +155,7 @@
 
     </LinearLayout>
 
+
     <!-- END    : Your code should be within this block -->
     <RelativeLayout
         android:layout_width="match_parent"
@@ -177,6 +178,23 @@
             android:textSize="20sp"></Button>
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="-450dp"
+        >
+        <EditText
+            android:id="@+id/dy_textinput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Text here">
+
+        </EditText>
+    </LinearLayout>
+
 </LinearLayout>
 
 
