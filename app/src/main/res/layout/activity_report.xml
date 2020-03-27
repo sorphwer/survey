@@ -1,215 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
->
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q1_title"></TextView>
-    <TextView
-        android:id="@+id/answer_q1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="">
-    </TextView>
-</LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/q2_title"></TextView>
-        <TextView
-            android:id="@+id/answer_q2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="">
-        </TextView>
-    </LinearLayout>
+    android:background="#00009688"
+    android:gravity="center">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/q3_title"></TextView>
-        <TextView
-            android:id="@+id/answer_q3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="">
-        </TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/q4_title"></TextView>
-        <TextView
-            android:id="@+id/answer_q4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="">
-        </TextView>
-    </LinearLayout>
+    <!--  Start : Your code should be within this block -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/q5_title"></TextView>
-        <TextView
-            android:id="@+id/answer_q5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="">
-        </TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/q6_title"></TextView>
-        <TextView
-            android:id="@+id/answer_q6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="">
-        </TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/q7_title"></TextView>
-        <TextView
-            android:id="@+id/answer_q7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="">
-        </TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/q8_title"></TextView>
-        <TextView
-            android:id="@+id/answer_q8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="">
-        </TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/q9_title"></TextView>
-        <TextView
-            android:id="@+id/answer_q9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="">
-        </TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/q10_title"></TextView>
-        <TextView
-            android:id="@+id/answer_q10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="">
-        </TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/q11_title"></TextView>
-        <TextView
-            android:id="@+id/answer_q11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="">
-        </TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/q12_title"></TextView>
-        <TextView
-            android:id="@+id/answer_q12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="">
-        </TextView>
-    </LinearLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <Button
-            android:id="@+id/download_button"
+    <ScrollView
+        android:layout_width="317dp"
+        android:layout_height="564dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            android:layout_marginLeft="50dp"
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
+                android:autoText="false"
+                android:text="REPORT"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="36sp" />
 
-            android:layout_marginRight="50dp"
-            android:background="@color/colorPrimary"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
-            android:text="DOWNLOAD"
+            <LinearLayout
+                android:id="@+id/answer_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-            android:textSize="20sp"></Button>
-    </RelativeLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
+                android:background="#99008577"
+
+                android:onClick="storeInApp"
+                android:text="STORE DATA INSIDE APP"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
+                android:background="#99008577"
+
+                android:onClick="storeInSDCard"
+                android:text="STORE DATA IN SD CARD"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#99008577"
+                android:onClick="exit"
+                android:text="FINISH"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
 
 
-</LinearLayout></ScrollView>
+
+    <!-- END    : Your code should be within this block -->
+
+</RelativeLayout>
