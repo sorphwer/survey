@@ -1,11 +1,9 @@
 package com.example.survey;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.LauncherActivity;
+import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -14,14 +12,10 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 import android.util.TypedValue;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.TranslateAnimation;
-import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
@@ -39,7 +33,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -52,6 +45,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
     private SQLiteDatabase db;
     private Cursor cursor;
     ContentValues contentValues;
+    int yourChoice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,11 +56,11 @@ public class QuestionnaireActivity extends AppCompatActivity {
         initListView();
     }
 
-    public void exit(View view) {
+    public void onClick_exit(View view) {
         FinishAll.exit();
     }
 
-    public void addNew(View view) {
+    public void onClick_addNew(View view) {
         AndPermission.with(this)
                 .permission(Permission.CAMERA, Permission.READ_EXTERNAL_STORAGE)
                 .onGranted(new Action() {
@@ -90,6 +84,38 @@ public class QuestionnaireActivity extends AppCompatActivity {
 
                 }).start();
     }
+    public void onClick_language(View view){
+
+        final String[] items = { "我是1","我是2","我是3","我是4" };
+        yourChoice = -1;
+        AlertDialog.Builder singleChoiceDialog =
+                new AlertDialog.Builder(QuestionnaireActivity.this);
+        singleChoiceDialog.setTitle("我是一个单选Dialog");
+
+        singleChoiceDialog.setSingleChoiceItems(items, 0,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        yourChoice = which;
+                    }
+                });
+        singleChoiceDialog.setPositiveButton("确定",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (yourChoice != -1) {
+                            Toast.makeText(QuestionnaireActivity.this,
+                                    "你选择了" + items[yourChoice],
+                                    Toast.LENGTH_SHORT).show();
+                            LocaleUtils.updateLocale(QuestionnaireActivity.this, LocaleUtils.LOCALE_CHINESE);
+                            restartAct();
+                        }
+                    }
+                });
+        singleChoiceDialog.show();
+    }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -226,6 +252,14 @@ public class QuestionnaireActivity extends AppCompatActivity {
         Intent intent = new Intent(this, QuestionnaireActivity.class);
         startActivity(intent);
     }
+    private void restartAct() {
+        finish();
+        Intent _Intent = new Intent(this, QuestionnaireActivity.class);
+        startActivity(_Intent);
+        //清除Activity退出和进入的动画
+        overridePendingTransition(0, 0);
+    }
+
 
 
 }

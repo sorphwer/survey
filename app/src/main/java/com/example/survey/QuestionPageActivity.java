@@ -1,7 +1,5 @@
 package com.example.survey;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,19 +14,18 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import static android.view.View.GONE;
 
 public class
-question_page extends AppCompatActivity {
+QuestionPageActivity extends AppCompatActivity {
     private Question[] questions;
     String id;
     int nowQuestion;
@@ -41,7 +38,7 @@ question_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_page);
-        FinishAll.activityList.add(question_page.this);
+        FinishAll.activityList.add(QuestionPageActivity.this);
         init();
         String questionJson=null;//DANGER
         cursor.moveToFirst();
@@ -69,7 +66,7 @@ question_page extends AppCompatActivity {
 
         cursor=db.rawQuery(sql,new String[]{});
         Log.i("SQL","Questionire recodes number:"+ cursor.getCount());
-        Log.i("SQL","target id: "+String.valueOf(surveyID));
+        Log.i("SQL","target id: "+ surveyID);
     }
 
     private void loadQuestion(String json) {
@@ -114,7 +111,7 @@ question_page extends AppCompatActivity {
         radioGroup.removeAllViews();
 
         //add options
-        String options[] = now.getOptions();
+        String[] options = now.getOptions();
 
         //add RadioButton when type is "single"
         if(now.getType().equals("single")) {
@@ -182,9 +179,9 @@ question_page extends AppCompatActivity {
             return;
         }
 
-        //go to report
+        //go to ReportActivity
         try {
-            Intent intent = new Intent(this, report.class);
+            Intent intent = new Intent(this, ReportActivity.class);
             intent.putExtra("len", questions.length);
             for(int i=0; i<questions.length; i++) {
                 JSONObject result = questions[i].getResult();

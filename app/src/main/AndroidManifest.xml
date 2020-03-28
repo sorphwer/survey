@@ -29,9 +29,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".report" />
+        <activity android:name=".ReportActivity" />
         <activity android:name=".LockActivity" />
-        <activity android:name=".question_page" />
+        <activity android:name=".QuestionPageActivity" />
         <activity android:name=".QuestionnaireActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

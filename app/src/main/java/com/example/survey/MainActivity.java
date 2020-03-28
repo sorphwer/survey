@@ -1,11 +1,11 @@
 package com.example.survey;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,12 +24,12 @@ public class MainActivity extends AppCompatActivity {
         CheckBox cb_accept = findViewById(R.id.accept);
         if(!cb_accept.isChecked())
             return;
-        Intent intent = new Intent(this, question_page.class);
+        Intent intent = new Intent(this, QuestionPageActivity.class);
         Intent i=getIntent();
         Bundle ID =i.getExtras();
         String surveyID=ID.getString("id");
         intent.putExtra("id",surveyID);
         startActivity(intent);
-    }
+    }//一点都不好玩
 
 }

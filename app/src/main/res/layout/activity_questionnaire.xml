@@ -8,6 +8,21 @@
     android:orientation="vertical"
     tools:context=".QuestionnaireActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+
+        android:layout_width="match_parent"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="survey">
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
     <com.baoyz.swipemenulistview.SwipeMenuListView
         android:id="@+id/lv_questionnaire"
         android:layout_width="match_parent"
@@ -20,22 +35,30 @@
         android:layout_marginTop="50dp">
 
         <Button
+            android:id="@+id/btn_languagae"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+
+            android:text="@string/questionnaire_language"
+            android:onClick="onClick_language"/>
+
+        <Button
             android:id="@+id/btn_new"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:gravity="center"
-            android:layout_marginStart="50dp"
-            android:text="Add New"
-            android:onClick="addNew"/>
+            android:text="@string/questionnaire_addnew"
+            android:onClick="onClick_addNew"/>
 
         <Button
             android:id="@+id/btn_exit"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:gravity="center"
-            android:layout_marginStart="20dp"
-            android:text="Exit"
-            android:onClick="exit"/>
+
+            android:text="@string/questionnaire_Exit"
+            android:onClick="onClick_exit"/>
     </LinearLayout>
 
 </LinearLayout>

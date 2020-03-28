@@ -1,18 +1,9 @@
 package com.example.survey;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.content.ContentValues;
-import android.content.Context;
-import android.content.ContextWrapper;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
@@ -27,12 +18,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.RandomAccessFile;
 import java.util.List;
 
@@ -40,7 +33,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class report extends AppCompatActivity {
+public class ReportActivity extends AppCompatActivity {
 
     private final static int REQUEST_ACCESS_COARSE_LOCATION = 1;
     private final static int REQUEST_ACCESS_FINE_LOCATION = 1;
@@ -58,7 +51,7 @@ public class report extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
-        FinishAll.activityList.add(report.this);
+        FinishAll.activityList.add(ReportActivity.this);
         showReport();
 
         //about saving in database
@@ -84,13 +77,13 @@ public class report extends AppCompatActivity {
             }
 
             //show questions
-            String answer = new String();
+            String answer = "";
             String[] ansArray = questions[i].getAnswers();
             for(int j=0; j<ansArray.length; j++) {
                 answer += ansArray[j];
                 answer += "\n";
             }
-            addItem(Integer.toString(i+1) + ". " + questions[i].getQuestion(), answer);
+            addItem((i + 1) + ". " + questions[i].getQuestion(), answer);
         }
     }
 
@@ -145,11 +138,11 @@ public class report extends AppCompatActivity {
             }
             raf.close();
 
-            Toast.makeText(report.this, "Store in app: success", Toast.LENGTH_LONG).show();
+            Toast.makeText(ReportActivity.this, "Store in app: success", Toast.LENGTH_LONG).show();
 
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(report.this, "failed: File Error", Toast.LENGTH_LONG).show();
+            Toast.makeText(ReportActivity.this, "failed: File Error", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -157,7 +150,7 @@ public class report extends AppCompatActivity {
         Intent intent = getIntent();
         askForPermission();
         if(Environment.getExternalStorageState().equals(Environment.MEDIA_UNKNOWN)) {
-            Toast.makeText(report.this, "You don't have a SD card!", Toast.LENGTH_LONG).show();
+            Toast.makeText(ReportActivity.this, "You don't have a SD card!", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -177,16 +170,16 @@ public class report extends AppCompatActivity {
             }
             raf.close();
 
-            Toast.makeText(report.this, "Store inside SD card: success", Toast.LENGTH_LONG).show();
+            Toast.makeText(ReportActivity.this, "Store inside SD card: success", Toast.LENGTH_LONG).show();
 
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(report.this, "failed: File Error", Toast.LENGTH_LONG).show();
+            Toast.makeText(ReportActivity.this, "failed: File Error", Toast.LENGTH_LONG).show();
         }
     }
 
     private String getResultFileContent() {
-        String output = new String();
+        String output = "";
         try {
             JSONArray jarray = new JSONArray();
             for(int i=0; i<questions.length; i++) {
@@ -217,7 +210,7 @@ public class report extends AppCompatActivity {
         ContentValues values = getValues();
 
         if (values == null) {
-            Toast.makeText(report.this, "Store failed, please retry!", Toast.LENGTH_LONG).show();
+            Toast.makeText(ReportActivity.this, "Store failed, please retry!", Toast.LENGTH_LONG).show();
             return;
         }
 
