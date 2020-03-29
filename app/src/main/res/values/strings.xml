@@ -14,4 +14,9 @@
     <string name="questionnaire_language">Language</string>
     <string name="questionnaire_addnew">Add New</string>
     <string name="questionnaire_Exit">Exit</string>
+    <string name="questionnaire_dialog_title">Select Language</string>
+    <string name="confirm">Confirm</string>
+
+    <string name="open">open</string>
+    <string name="delete">delete</string>
 </resources>

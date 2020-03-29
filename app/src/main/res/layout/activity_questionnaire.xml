@@ -16,7 +16,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         app:popupTheme="@style/AppTheme.PopupOverlay"
-        app:title="survey">
+        app:title="@string/app_name">
 
 
 
@@ -33,6 +33,11 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="50dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editor"
+            android:onClick="onClick_editor"></Button>
 
         <Button
             android:id="@+id/btn_languagae"
@@ -60,6 +65,7 @@
             android:text="@string/questionnaire_Exit"
             android:onClick="onClick_exit"/>
     </LinearLayout>
+
 
 </LinearLayout>
 

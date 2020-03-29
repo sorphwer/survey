@@ -84,13 +84,18 @@ public class QuestionnaireActivity extends AppCompatActivity {
 
                 }).start();
     }
+    public void onClick_editor(View view){
+        Intent intent = new Intent(this, EditorActivity.class);
+        Intent i=getIntent();
+        startActivity(intent);
+    }
     public void onClick_language(View view){
 
-        final String[] items = { "我是1","我是2","我是3","我是4" };
+        final String[] items = { "中文","English"};
         yourChoice = -1;
         AlertDialog.Builder singleChoiceDialog =
                 new AlertDialog.Builder(QuestionnaireActivity.this);
-        singleChoiceDialog.setTitle("我是一个单选Dialog");
+        singleChoiceDialog.setTitle(R.string.questionnaire_dialog_title);
 
         singleChoiceDialog.setSingleChoiceItems(items, 0,
                 new DialogInterface.OnClickListener() {
@@ -99,16 +104,26 @@ public class QuestionnaireActivity extends AppCompatActivity {
                         yourChoice = which;
                     }
                 });
-        singleChoiceDialog.setPositiveButton("确定",
+        singleChoiceDialog.setPositiveButton(R.string.confirm,
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if (yourChoice != -1) {
+                            /*
                             Toast.makeText(QuestionnaireActivity.this,
                                     "你选择了" + items[yourChoice],
                                     Toast.LENGTH_SHORT).show();
-                            LocaleUtils.updateLocale(QuestionnaireActivity.this, LocaleUtils.LOCALE_CHINESE);
-                            restartAct();
+
+                             */
+                            if(yourChoice==0){
+                                LocaleUtils.updateLocale(QuestionnaireActivity.this, LocaleUtils.LOCALE_CHINESE);
+                                restartAct();
+                            }
+                            else if(yourChoice==1){
+                                LocaleUtils.updateLocale(QuestionnaireActivity.this, LocaleUtils.LOCALE_ENGLISH);
+                                restartAct();
+                            }
+
                         }
                     }
                 });
@@ -173,7 +188,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
                         getApplicationContext());
                 openItem.setBackground(R.color.colorPrimary);
                 openItem.setWidth(dp2px(80));
-                openItem.setTitle("Open");
+                openItem.setTitle(R.string.open);
                 openItem.setTitleSize(18);
                 openItem.setTitleColor(Color.WHITE);
                 menu.addMenuItem(openItem);
@@ -182,7 +197,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
                         getApplicationContext());
                 deleteItem.setBackground(R.color.colorAccent);
                 deleteItem.setWidth(dp2px(90));
-                deleteItem.setTitle("Delete");
+                deleteItem.setTitle(R.string.delete);
                 deleteItem.setTitleSize(18);
                 deleteItem.setTitleColor(Color.WHITE);
                 menu.addMenuItem(deleteItem);
