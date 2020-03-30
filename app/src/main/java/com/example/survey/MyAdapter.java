@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 import java.util.Map;
 
@@ -60,7 +62,7 @@ public class MyAdapter extends BaseAdapter {
         View view=null;
         if(convertView == null) {
             view = inflater.inflate(R.layout.item, null);
-            holder = new ViewHolder();
+            holder = new ViewHolder(view);
             holder.question = view.findViewById(R.id.tv_item);
             view.setTag(holder);
         } else {
@@ -73,8 +75,12 @@ public class MyAdapter extends BaseAdapter {
         return view;
     }
 
-    public static class ViewHolder {
-        TextView question;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView question;
 
+        public ViewHolder(View v) {
+            super(v);
+        }
     }
+
 }

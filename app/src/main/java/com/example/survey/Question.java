@@ -35,6 +35,15 @@ public class Question {
                 answers[i] = array.getString(i);
         }
     }
+    Question(String title){
+        type="fill-in";
+        question=title;
+    }
+    Question(String title, String type, String[] options){
+        this.type = type;
+        this.options=options;
+        this.question=title;
+    }
 
     public JSONObject getResult() throws JSONException {
         if(answers == null)
