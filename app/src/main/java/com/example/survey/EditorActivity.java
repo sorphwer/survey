@@ -81,17 +81,13 @@ public class EditorActivity extends AppCompatActivity {
         String[] options = {"O1","O2","O3"};
         Question Q1 = new Question("Fill in test");
         Question Q2 = new Question("fill-in test 2");
-        Question Q3 = new Question("Multi","multiple",options);
+        Question Q3 = new Question("MultiTest","multiple",options);
+        Question Q4 = new Question("SingleTest","single",options);
         data.add(Q1);
         data.add(Q2);
         data.add(Q3);
-        data.add(Q3);
-        data.add(Q3);
-        data.add(Q3);
-        data.add(Q3);
-        data.add(Q3);
-        data.add(Q3);
-        data.add(Q3);
+        data.add(Q4);
+
 
         return data;
     }
