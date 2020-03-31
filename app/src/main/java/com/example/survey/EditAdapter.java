@@ -1,14 +1,18 @@
 package com.example.survey;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import static java.lang.Math.min;
 
 public class EditAdapter  extends RecyclerView.Adapter<EditAdapter.MyViewHolder>{
     private ArrayList<Question> mData;
@@ -33,15 +37,36 @@ public class EditAdapter  extends RecyclerView.Adapter<EditAdapter.MyViewHolder>
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public TextView title;
+        public CheckBox[] checkBoxes;
 
         public MyViewHolder(View v,int type) {
             super(v);
-            title=v.findViewById(R.id.fillin_title);
-            if (type==3){
-                //do nothing actually.
+
+            if (type==TYPE_FILL_IN){
+                title=v.findViewById(R.id.fillin_title);
+
+            }
+            else if(type == TYPE_MULTI){
+                title =v.findViewById(R.id.multiple_title);
+                checkBoxes = new CheckBox[7];
+                checkBoxes[0]=v.findViewById(R.id.dy_multi1);
+                checkBoxes[1]=v.findViewById(R.id.dy_multi2);
+                checkBoxes[2]=v.findViewById(R.id.dy_multi3);
+                checkBoxes[3]=v.findViewById(R.id.dy_multi4);
+                checkBoxes[4]=v.findViewById(R.id.dy_multi5);
+                checkBoxes[5]=v.findViewById(R.id.dy_multi6);
+                checkBoxes[6]=v.findViewById(R.id.dy_multi7);
+                for(int i=0;i<7;i++){
+                    checkBoxes[i].setVisibility(View.GONE);
+                }
             }
         }
     }
+
+
+
+
+
 
     @NonNull
     @Override
@@ -55,17 +80,26 @@ public class EditAdapter  extends RecyclerView.Adapter<EditAdapter.MyViewHolder>
             MyViewHolder vh = new MyViewHolder(v,viewType);
             return vh;
         }
+        else if(viewType==TYPE_MULTI){
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.editor_multiple, parent, false);
+            MyViewHolder vh = new MyViewHolder(v,viewType);
+            return vh;
+        }
         //TODO
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.editor_fill_in, parent, false);
         return null;
     }
 
     @Override
-    /**
-     * THIS CONTROLS THE VALUE PASSED INTO TARGET VIEWHOLDER
-     */
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.title.setText(mData.get(position).getQuestion());
+        if(mData.get(position).getType()=="multiple"){
+            for(int i=0;i<min(mData.get(position).getOptions().length,7);i++){
+                Log.i("Adapter","generate options:"+ i);
+                holder.checkBoxes[i].setText(mData.get(position).getOptions()[i]);
+                holder.checkBoxes[i].setVisibility(View.VISIBLE);
+            }
+        }
     }
 
 
@@ -78,12 +112,19 @@ public class EditAdapter  extends RecyclerView.Adapter<EditAdapter.MyViewHolder>
 
     @Override
     public int getItemViewType(int position) {
-        if (mData.get(position).getType()=="Single")
+        if (mData.get(position).getType()=="single")
             return TYPE_SINGLE;
         else if(mData.get(position).getType()=="multiple")
             return TYPE_MULTI;
         else
             return TYPE_FILL_IN;
     }
+
+
+    public interface onItemClickListener{
+        void onClick(View itemView,int position);
+    }
+
+
 
 }

@@ -33,6 +33,9 @@ public class EditorActivity extends AppCompatActivity {
         QuestionsView=findViewById(R.id.recycler_view);
         QuestionsView.setLayoutManager(layoutManager);
         QuestionsView.setAdapter(mAdapter);
+        //RecyclerView.OnItemTouchListener onItemTouchListener = new onItemTouchLis ;
+        //QuestionsView.addOnItemTouchListener(onItemTouchListener);
+
     }
     public void onclick_New(View view){
 
@@ -75,10 +78,20 @@ public class EditorActivity extends AppCompatActivity {
     }
     private ArrayList<Question> getData() {
         ArrayList<Question> data = new ArrayList<>();
+        String[] options = {"O1","O2","O3"};
         Question Q1 = new Question("Fill in test");
         Question Q2 = new Question("fill-in test 2");
+        Question Q3 = new Question("Multi","multiple",options);
         data.add(Q1);
         data.add(Q2);
+        data.add(Q3);
+        data.add(Q3);
+        data.add(Q3);
+        data.add(Q3);
+        data.add(Q3);
+        data.add(Q3);
+        data.add(Q3);
+        data.add(Q3);
 
         return data;
     }

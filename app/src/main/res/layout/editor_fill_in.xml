@@ -13,7 +13,6 @@
         android:id="@+id/fillin_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         tools:text="item"/>
 
         <EditText
@@ -22,7 +21,8 @@
             android:layout_height="29dp"
             android:layout_gravity="center_horizontal"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:focusable="false"/>
     </LinearLayout>
 
 </LinearLayout>
