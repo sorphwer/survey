@@ -15,8 +15,8 @@
 Survey is an Android Application based on Java.
 
 The basic thought is to generate a serious of pages of different question types, to let users fill their answers. And save all the answers in the end. The answers will also include `IMEI`(if target devices’ API level allows that, otherwise it will be `null`), timestamp, and  location information.(Gifs below are not the final release version)
+![image](assets/IMG_6864.gif)
 
-<img src="assets/IMG_6864.gif" alt="image-20200401162836992" style="zoom:50%;" />
 
 Survey also contains:
 
@@ -25,7 +25,7 @@ Survey also contains:
 - Questionnaires Manager.
 - Language Support : Chinese, English
 
-<img src="assets/IMG_6865.gif" alt="image-20200401162932155" style="zoom:50%;" />
+
 
 ## Installation
 
