@@ -1,9 +1,10 @@
 # Survey
 ![](assets/icon.png)
-Version: `Dev`
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs) ![Version](https://badge.fury.io/gh/tterb%2FHyde.svg)
 <!-- TOC -->
 
 - [Survey](#survey)
+  - [Other Features:](#other-features)
   - [Installation](#installation)
   - [Usage](#usage)
     - [Question json format](#question-json-format)
@@ -22,7 +23,7 @@ The basic thought is to generate a serious of pages of different question types,
 ![image](https://github.com/sorphwer/survey/blob/master/assets/IMG_6864.GIF)
 
 
-Survey also contains:
+## Other Features:
 
 - Questionnaire Editor
 - Support import Questionnaires via QR code: Camera/Album
