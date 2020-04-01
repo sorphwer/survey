@@ -1,5 +1,6 @@
 # Survey
-[![Version](https://badge.fury.io/gh/tterb%2FHyde.svg)](https://badge.fury.io/gh/tterb%2FHyde)
+![](assets/icon.png)
+![Version](https://badge.fury.io/gh/tterb%2FHyde.svg)
 <!-- TOC -->
 
 - [Survey](#survey)
@@ -14,7 +15,7 @@
 
 <!-- /TOC -->
 Survey is an Android Application based on Java.
-![](assets/icon.png)
+
 
 The basic thought is to generate a serious of pages of different question types, to let users fill their answers. And save all the answers in the end. The answers will also include `IMEI`(if target devices’ API level allows that, otherwise it will be `null`), timestamp, and  location information.(Gifs below are not the final release version)
 
@@ -27,6 +28,7 @@ Survey also contains:
 - Support import Questionnaires via QR code: Camera/Album
 - Questionnaires Manager.
 - Language Support : Chinese, English
+- Unlock Panel
 
 
 
