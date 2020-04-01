@@ -16,7 +16,7 @@ Survey is an Android Application based on Java.
 
 The basic thought is to generate a serious of pages of different question types, to let users fill their answers. And save all the answers in the end. The answers will also include `IMEI`(if target devices’ API level allows that, otherwise it will be `null`), timestamp, and  location information.(Gifs below are not the final release version)
 
-![](assets/IMG_6864.gif)
+![image](https://github.com/sorphwer/survey/blob/master/assets/IMG_6864.GIF)
 
 
 Survey also contains:
