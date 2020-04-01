@@ -7,6 +7,7 @@
   - [Other Features:](#other-features)
   - [Installation](#installation)
   - [Usage](#usage)
+    - [Permissions](#permissions)
     - [Question json format](#question-json-format)
     - [DB Structure](#db-structure)
       - [TABLE Survey](#table-survey)
@@ -40,6 +41,12 @@ To run with the source code, you need to install [Android Studio] and import the
 The min SDK version is `20` and SDK version `29` is recommended.
 
 ## Usage
+
+### Permissions
+
+- Internal/External storage
+- Acess to albums
+- Acces to camera
 
 ### Question json format
 
