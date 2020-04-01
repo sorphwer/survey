@@ -1,20 +1,31 @@
 # Survey
+<!-- TOC -->
 
-[TOC]
+- [Survey](#survey)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Question json format](#question-json-format)
+    - [DB Structure](#db-structure)
+      - [TABLE Survey](#table-survey)
+      - [TABLE answer](#table-answer)
+  - [Contributing](#contributing)
+  - [License](#license)
 
+<!-- /TOC -->
 Survey is an Android Application based on Java.
 
-The basic thought is to generate a serious of pages of different question types, to let users fill their answers. And save all the answers in the end. The answers will also include `IMEI`(if target devices’ API level allows that, otherwise it will be `null`), timestamp, and  location information.
+The basic thought is to generate a serious of pages of different question types, to let users fill their answers. And save all the answers in the end. The answers will also include `IMEI`(if target devices’ API level allows that, otherwise it will be `null`), timestamp, and  location information.(Gifs below are not the final release version)
 
-Besides the answering part, 
+<img src="assets/image-20200401162836992.png" alt="image-20200401162836992" style="zoom:50%;" />
+
+Survey also contains:
 
 - Questionnaire Editor
-
 - Support import Questionnaires via QR code: Camera/Album
-
 - Questionnaires Manager.
+- Language Support : Chinese, English
 
-  //TODO gif here.
+<img src="assets/image-20200401162932155.png" alt="image-20200401162932155" style="zoom:50%;" />
 
 ## Installation
 
@@ -68,19 +79,21 @@ Also, there’s a online questionnaire editor : http://xiaonan.ngrok2.xiaomiqiu.
 
 ### DB Structure
 
-### TABLE Survey
+#### TABLE Survey
 
 | col integer INT | col surveyID TEXT | col surveyJsonString TEXT |
 | --------------- | ----------------- | ------------------------- |
 | (increasing)    |                   |                           |
 
-### TABLE answer
+#### TABLE answer
 
 | col id INT | col latitude DOUBLE | col timestamp DOUBLE | col sync INT | col IMEI char(20) | col answer TEXT |
 | ---------- | ------------------- | -------------------- | ------------ | ----------------- | --------------- |
 |            |                     |                      | 0            |                   |                 |
 
 ## Contributing
+
+**This application is based on a team work “[survey](https://github.com/Android-Lab-Group-1/Survey)”**
 
  Used modules:  [zxing](https://github.com/zxing/zxing) for QR scanner. And baoyz’s  [swipemenulistview](https://github.com/baoyongzhang/SwipeMenuListView)
 
@@ -93,9 +106,7 @@ implementation 'com.baoyz.swipemenulistview:library:1.3.0'
 
 To edit list view , please check the doc of [RecyclerView](https://developer.android.google.cn/guide/topics/ui/layout/recyclerview#java)
 
-## Others
 
-This application is based on a team work “[survey](https://github.com/Android-Lab-Group-1/Survey)”
 
 ## License
 
