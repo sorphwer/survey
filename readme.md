@@ -30,7 +30,7 @@ Survey also contains:
 
 ## Installation
 
-To run with the source code, you need to install [Android Studio](https://developer.android.com/studio).
+To run with the source code, you need to install [Android Studio] and import the root folder. (https://developer.android.com/studio).
 
 The min SDK version is `20` and SDK version `29` is recommended.
 
