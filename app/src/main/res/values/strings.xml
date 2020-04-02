@@ -19,4 +19,6 @@
 
     <string name="open">open</string>
     <string name="delete">delete</string>
+    <string name="hint_title">Input title here</string>
+    <string name="hint_options">Options here</string>
 </resources>
