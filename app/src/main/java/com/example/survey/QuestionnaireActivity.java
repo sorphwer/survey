@@ -27,6 +27,7 @@ import com.yanzhenjie.permission.Permission;
 import com.yzq.zxinglibrary.android.CaptureActivity;
 import com.yzq.zxinglibrary.common.Constant;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -40,6 +41,7 @@ import okhttp3.Response;
 
 public class QuestionnaireActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_SCAN = 111;
+    private static final int REQUEST_CODE_EDITOR = 100;
     private SwipeMenuListView listView;
     private DBHelper dbHelper;
     private SQLiteDatabase db;
@@ -86,8 +88,9 @@ public class QuestionnaireActivity extends AppCompatActivity {
     }
     public void onClick_editor(View view){
         Intent intent = new Intent(this, EditorActivity.class);
-        Intent i=getIntent();
-        startActivity(intent);
+        //Intent i=getIntent();
+        //startActivity(intent);
+        startActivityForResult(intent, REQUEST_CODE_EDITOR);
     }
     public void onClick_language(View view){
 
@@ -174,6 +177,31 @@ public class QuestionnaireActivity extends AppCompatActivity {
                 }).start();
 
 
+            }
+        }
+        else if(requestCode == REQUEST_CODE_EDITOR && resultCode == RESULT_OK){
+            //TODO
+            try {
+                Log.e("Editor", data.getStringExtra("json"));
+                String responseData = data.getStringExtra("json");
+                JSONObject jsonObject = new JSONObject(responseData);
+                jsonObject = jsonObject.getJSONObject("survey");//DANGER
+                String id = jsonObject.getString("id");
+                String sql = "SELECT* FROM survey WHERE surveyID=" + id;
+                cursor = db.rawQuery(sql, new String[]{});
+                System.out.println(responseData);
+                if (cursor.getCount() == 0) {
+                    db.execSQL("INSERT INTO survey VALUES(NULL,?,?)", new Object[]{
+                            id, responseData});
+                    Log.i("SQL", "EXEC" + id + responseData);
+                    flush();
+                } else {
+                    //System.out.println("问卷已存在");
+                    Log.i("SQL", "insert new questionire fail.");
+                }
+            }
+            catch (JSONException e){
+                Log.e("JSON",e.toString());
             }
         }
         //this.onCreate(null);

@@ -26,6 +26,11 @@
         android:layout_height="wrap_content"
         android:text="Delete"
         android:onClick="onClick_Delete"></Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save and exit"
+        android:onClick="onClick_Save"></Button>
 </LinearLayout>
 
 

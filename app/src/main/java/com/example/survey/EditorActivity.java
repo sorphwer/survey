@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -11,14 +12,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class EditorActivity extends AppCompatActivity {
     private static final int  REQUEST_CODE_FILLIN_DIALOG=3;
     private static final int  REQUEST_CODE_MULTI_DIALOG=2;
     private static final int  REQUEST_CODE_SINGLE_DIALOG=1;
+    private static final int  REQUEST_CODE_NAME=7;
     int yourChoice;
     public ArrayList<Question> data;
+    public String questionnaireName;
     private RecyclerView QuestionsView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -129,7 +136,21 @@ public class EditorActivity extends AppCompatActivity {
 
             }
         }
+        else if(requestCode==REQUEST_CODE_NAME && resultCode==RESULT_OK){
+            if (data != null) {
+                questionnaireName=data.getStringExtra("name");
+                Intent editorResutlIntent = new Intent();
+                editorResutlIntent.putExtra("json",getQustionJson(questionnaireName));
+                EditorActivity.this.setResult(RESULT_OK,editorResutlIntent);
+                EditorActivity.this.finish();
+            }
+        }
         //this.onCreate(null);
+    }
+    public void onClick_Save(View view){
+        Intent intent = new Intent(EditorActivity.this, DialogNameActivity.class);
+        startActivityForResult(intent, REQUEST_CODE_NAME);
+
     }
 
 
@@ -151,5 +172,50 @@ public class EditorActivity extends AppCompatActivity {
 
         //return data;
     }
+
+    private String getQustionJson(String name){
+        JSONObject questions = new JSONObject();
+        Log.i("Editor",String.valueOf(data.size()));
+        JSONObject survey = new JSONObject();
+        JSONObject res = new JSONObject();
+
+        JSONArray options = new JSONArray();
+        JSONArray questionsArray = new JSONArray();
+        try{
+            survey.put("id",name);
+            survey.put("len",data.size());
+        }catch (JSONException e){
+            Log.e("JSON",e.toString());
+        }
+
+        for(int i =0;i<data.size()-1;i++){
+            try{
+                Log.i("Editor", i +data.get(i).getType());
+                questions.put("type", data.get(i).getType());
+                Log.i("Editor",String.valueOf(i));
+                questions.put("question",data.get(i).getQuestion());
+                if(data.get(i).getOptions()!=null){
+                    for(int j=0;j<data.get(i).getOptions().length-1;j++){
+                        JSONObject option = new JSONObject();
+                        option.put(String.valueOf(j+1),data.get(i).getOptions()[j]);
+                        options.put(option);
+                    }
+                    questions.put("options",options);
+                }
+                questionsArray.put(questions);
+
+            }catch (JSONException e){
+                Log.e("JSON",e.toString());
+            }
+        }
+        try{
+            survey.put("questions",questionsArray);
+            res.put("survey",survey);
+        }catch (JSONException e) {
+            Log.e("JSON", e.toString());
+        }
+       return res.toString();
+    }
+
 
 }

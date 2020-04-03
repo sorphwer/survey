@@ -26,9 +26,11 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".DialogNameActivity"
+            android:theme="@style/dialog_style"></activity>
         <activity
             android:name=".DialogMultipleActivity"
-            android:theme="@style/dialog_style"/>
+            android:theme="@style/dialog_style" />
         <activity
             android:name=".DialogSingleActivity"
             android:theme="@style/dialog_style" />
