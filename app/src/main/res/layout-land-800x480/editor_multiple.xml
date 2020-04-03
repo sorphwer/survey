@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/check_add_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/multiple_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="item"
+           ></TextView>
+        <CheckBox
+            android:id="@+id/dy_multi1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="options"
+            android:visibility="gone"></CheckBox>
+        <CheckBox
+            android:id="@+id/dy_multi2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="options"
+            android:visibility="gone"></CheckBox>
+        <CheckBox
+            android:id="@+id/dy_multi3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="options"
+            android:visibility="gone"></CheckBox>
+        <CheckBox
+            android:id="@+id/dy_multi4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="options"
+            android:visibility="gone"></CheckBox>
+        <CheckBox
+            android:id="@+id/dy_multi5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="options"
+            android:visibility="gone"></CheckBox>
+        <CheckBox
+            android:id="@+id/dy_multi6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="options"
+            android:visibility="gone"></CheckBox>
+        <CheckBox
+            android:id="@+id/dy_multi7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="options"
+            android:visibility="gone"></CheckBox>
+
+        <!--
+            Required to Add CheckBoxes Here Dynamically
+        -->
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

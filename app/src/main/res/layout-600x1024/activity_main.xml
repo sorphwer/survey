@@ -9,10 +9,11 @@
 
     <LinearLayout
         android:id="@+id/linearlayout"
-        android:layout_width="320dp"
-        android:layout_height="500dp"
-        android:orientation="vertical"
-        android:layout_marginLeft="40dp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView2"
@@ -48,25 +49,29 @@
             android:text="@string/should_know_list"
             android:textSize="16sp" />
 
-        <CheckBox
-            android:id="@+id/accept"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20sp"
-            android:text="I accept these requests." />
+
 
     </LinearLayout>
+    <CheckBox
+        android:id="@+id/accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20sp"
+        android:text="I accept these requests."
+        android:layout_above="@id/button"/>
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/linearlayout"
+
         android:background="#99008577"
         android:onClick="goToSurvey"
         android:text="LET'S START!"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:layout_marginBottom="60dp"
+        android:layout_alignParentBottom="true"/>
 
     <!-- END    : Your code should be within this block -->
 
