@@ -174,12 +174,9 @@ public class EditorActivity extends AppCompatActivity {
     }
 
     private String getQustionJson(String name){
-        JSONObject questions = new JSONObject();
         Log.i("Editor",String.valueOf(data.size()));
         JSONObject survey = new JSONObject();
         JSONObject res = new JSONObject();
-
-        JSONArray options = new JSONArray();
         JSONArray questionsArray = new JSONArray();
         try{
             survey.put("id",name);
@@ -188,14 +185,17 @@ public class EditorActivity extends AppCompatActivity {
             Log.e("JSON",e.toString());
         }
 
-        for(int i =0;i<data.size()-1;i++){
+        for(int i =0;i<data.size();i++){
+            JSONObject questions = new JSONObject();
+            JSONArray options = new JSONArray();
+
             try{
                 Log.i("Editor", i +data.get(i).getType());
                 questions.put("type", data.get(i).getType());
                 Log.i("Editor",String.valueOf(i));
                 questions.put("question",data.get(i).getQuestion());
                 if(data.get(i).getOptions()!=null){
-                    for(int j=0;j<data.get(i).getOptions().length-1;j++){
+                    for(int j=0;j<data.get(i).getOptions().length;j++){
                         JSONObject option = new JSONObject();
                         option.put(String.valueOf(j+1),data.get(i).getOptions()[j]);
                         options.put(option);

@@ -50,7 +50,7 @@ public class DialogFillinActivity extends AppCompatActivity {
         //intent.putExtra("title","0");
         //setResult(REQUEST_CODE_FILLIN_DIALOG,intent);
         //finishActivity(REQUEST_CODE_FILLIN_DIALOG);
-        DialogFillinActivity.this.setResult(RESULT_OK,intent);
+        //DialogFillinActivity.this.setResult(RESULT_OK,intent);
         DialogFillinActivity.this.finish();
     }
 }

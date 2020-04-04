@@ -7,23 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".LockActivity" android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:gravity="center"
-        android:textSize="24sp"
-        android:text="@string/Lock"
-        />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_code"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
-        android:textSize="24sp"
-        android:text="" />
+
+
 
     <com.wangnan.library.GestureLockView
         android:id="@+id/glv"
@@ -34,4 +20,12 @@
         app:press_color="@color/circle_color"
         app:error_color="@color/error_point_select_color"
         app:line_thickness="6dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:text="@string/Lock"
+        />
 </LinearLayout>

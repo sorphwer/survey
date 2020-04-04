@@ -15,7 +15,7 @@
             android:id="@+id/question_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40sp"
+            android:layout_marginBottom="3dp"
             android:text="Question 1"
             android:textSize="24sp" />
 
@@ -24,9 +24,9 @@
             android:layout_width="302dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="20sp"
+            android:layout_marginBottom="3dp"
             android:text="@string/question1"
-            android:textSize="20sp"
+            android:textSize="14sp"
             android:visibility="visible" />
 
         <EditText
@@ -40,7 +40,7 @@
         <RadioGroup
             android:id="@+id/rd"
             android:layout_width="213dp"
-            android:layout_height="305dp"
+            android:layout_height="140dp"
             android:layout_gravity="center_horizontal">
 
             <RadioButton
@@ -48,18 +48,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Iphone"
-                android:textSize="18sp" />
+                android:textSize="10sp" />
 
         </RadioGroup>
-
+        <Button
+            android:id="@+id/next"
+            android:layout_width="320dp"
+            android:layout_height="30dp"
+            android:background="#99008577"
+            android:layout_below="@id/ly"
+            android:textSize="10sp"
+            android:onClick="next"
+            android:text="@string/next" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/next"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:background="#99008577"
-        android:layout_below="@id/ly"
-        android:onClick="next"
-        android:text="@string/next" />
 </RelativeLayout>

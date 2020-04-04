@@ -21,4 +21,42 @@
     <string name="delete">delete</string>
     <string name="hint_title">Input title here</string>
     <string name="hint_options">Options here</string>
+    <string name="editor">Editor</string>
+    <string name="question">Question</string>
+
+    <string name="editor_new">New</string>
+    <string name="editor_delete">Delete</string>
+    <string name="editor_SaveExit">Delete&amp;Exit</string>
+
+    <string name="title">WELCOME TO</string>
+    <string name="subtitle">TAKE PART IN OUR SURVEY!</string>
+    <string name="p1">Before we start, here are things you should know:</string>
+    <string name="maincheckbox">I accept these requests.</string>
+    <string name="start">LET\'S START!</string>
+
+    <string name="Lock">Please draw the exit code below.</string>
+
+    <string name="Report">REPORT</string>
+    <string name="insidesave">"STORE DATA INSIDE APP</string>
+    <string name="sdsave">STORE DATA IN SD CARD</string>
+    <string name="finish">finish</string>
+
+    <string name="fillinHint">Fill title here</string>
+    <string name="idHint">Fill id here</string>
+
+
+    <string name="newFillin">Create New Fill-in Question</string>
+    <string name="newMulti">Create New Multiple Question</string>
+    <string name="newSingle">Create New Single Question</string>
+
+    <string name="optionshint">Fill options here, divided with space</string>
+    <string name="cancle">cancle</string>
+
+    <string name="next">next</string>
+
+    <string name="emptyWarn">Answer should not be empty!</string>
+
+    <string name="unlockSuccess">unlock successfully</string>
+    <string name="unlockfailed">unlock failed</string>
+
 </resources>

@@ -14,12 +14,13 @@
     <LinearLayout
         android:layout_width="410dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="120dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="10dp"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <Button
             android:layout_width="wrap_content"
@@ -32,17 +33,17 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="onClick_Delete"
-            android:background="@color/colorAccent"
             android:layout_marginLeft="20dp"
+            android:background="@color/colorAccent"
+            android:onClick="onClick_Delete"
             android:text="@string/editor_delete"></Button>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="onClick_Save"
             android:layout_marginLeft="20dp"
             android:background="#99008577"
+            android:onClick="onClick_Save"
             android:text="@string/editor_SaveExit"></Button>
     </LinearLayout>
 

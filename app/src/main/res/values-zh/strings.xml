@@ -2,9 +2,9 @@
     <string name="app_name">问卷</string>
 
     <string name="should_know_list" tools:ignore="StringEscaping">
-        - Please be honest when making your choice. \n\n
-        - We are just doing a research so you don\'t have to fake your information. \n\n
-        - Please follow the step we designed for you and \'t skip any questions.
+        - 请诚实回答每一道题目。 \n\n
+        - 您提供的个人信息仅供调查使用。请尽可能使用真实信息。 \n\n
+        - 请不要跳过任何题目。
     </string>
 
     <string name="question1" tools:ignore="StringEscaping">
@@ -12,7 +12,7 @@
     </string>
 
     <string name="questionnaire_language">语言</string>
-    <string name="questionnaire_addnew">新建</string>
+    <string name="questionnaire_addnew">从二维码导入</string>
     <string name="questionnaire_Exit">退出</string>
     <string name="questionnaire_dialog_title">选择语言</string>
     <string name="confirm">确定</string>
@@ -20,4 +20,22 @@
     <string name="delete">删除</string>
     <string name="hint_title">输入标题</string>
     <string name="hint_options">输入选项</string>
+    <string name="editor">自定义问卷</string>
+    <string name="question">问卷</string>
+    <string name="editor_new">新问题</string>
+    <string name="editor_delete">删除</string>
+    <string name="editor_SaveExit">保存并退出</string>
+
+    <string name="title">欢迎</string>
+    <string name="subtitle">参加这个调查问卷</string>
+    <string name="p1">用户须知：</string>
+    <string name="maincheckbox">我同意以上要求</string>
+    <string name="start">让我们开始吧！</string>
+
+    <string name="Lock">请按所给数字进行解锁</string>
+
+    <string name="Report">报告</string>
+    <string name="insidesave">存储到APP</string>
+    <string name="sdsave">存储到SD卡</string>
+    <string name="finish">退出</string>
 </resources>

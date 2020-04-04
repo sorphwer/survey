@@ -7,9 +7,12 @@
 
     <LinearLayout
         android:id="@+id/ly"
-        android:layout_width="320dp"
-        android:layout_height="500dp"
-        android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+       >
 
         <TextView
             android:id="@+id/question_number"
@@ -61,5 +64,6 @@
         android:background="#99008577"
         android:layout_below="@id/ly"
         android:onClick="next"
-        android:text="@string/next" />
+        android:text="@string/next"
+        android:layout_marginLeft="120dp"/>
 </RelativeLayout>

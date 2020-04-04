@@ -60,7 +60,7 @@ public class DialogMultipleActivity extends AppCompatActivity {
     }
     public void onClick_multi_cancel(View v){
         Intent intent = new Intent();
-        this.setResult(RESULT_OK,intent);
+        //this.setResult(RESULT_OK,intent);
         this.finish();
     }
 }

@@ -26,7 +26,7 @@
     <com.baoyz.swipemenulistview.SwipeMenuListView
         android:id="@+id/lv_questionnaire"
         android:layout_width="match_parent"
-        android:layout_height="500dp" />
+        android:layout_height="775dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             android:text="@string/editor"
             android:background="#99008577"
             android:onClick="onClick_editor"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="30dp"
             ></Button>
 
         <Button
@@ -50,14 +50,14 @@
             android:background="#99008577"
             android:text="@string/questionnaire_language"
             android:onClick="onClick_language"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="30dp"
            />
 
         <Button
             android:id="@+id/btn_new"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="30dp"
             android:gravity="center"
             android:text="@string/questionnaire_addnew"
 
@@ -67,7 +67,7 @@
         <Button
             android:id="@+id/btn_exit"
             android:layout_width="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="30dp"
             android:layout_height="50dp"
             android:gravity="center"
 

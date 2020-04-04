@@ -248,7 +248,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
         while(cursor.moveToNext()){
             Map<String, Object> map = new HashMap<>();
             String surveyID=cursor.getString(cursor.getColumnIndex("surveyID"));
-            map.put("question","question "+surveyID);
+            map.put("question",this.getResources().getString(R.string.question)+" "+surveyID);
             list.add(map);
         }
         cursor.close();

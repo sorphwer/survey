@@ -1,12 +1,12 @@
 package com.example.survey;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.wangnan.library.GestureLockView;
 import com.wangnan.library.listener.OnGestureLockListener;
@@ -49,12 +49,12 @@ public class LockActivity extends AppCompatActivity {
                     return;
                 }
                 if(code.equals(result)){
-                    Toast.makeText(LockActivity.this,"unlock successfully",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LockActivity.this,getResources().getString(R.string.unlockSuccess),Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LockActivity.this, QuestionnaireActivity.class);
                     startActivity(intent);
                 }
                 else{
-                    Toast.makeText(LockActivity.this,"unlock failed",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LockActivity.this,getResources().getString(R.string.unlockfailed),Toast.LENGTH_SHORT).show();
                     gestureLockView.showErrorStatus(600);
                     String code1=listToString(exitCode());
                     tv_code.setText(code1);
