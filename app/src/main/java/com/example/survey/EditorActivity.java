@@ -56,11 +56,11 @@ public class EditorActivity extends AppCompatActivity {
     }
     public void onClick_New(View view){
 
-        final String[] items = { "Fill-in","Single","Multiple"};
+        final String[] items = { this.getResources().getString(R.string.fillin),this.getResources().getString(R.string.single),this.getResources().getString(R.string.multiple)};
         yourChoice = 0;
         AlertDialog.Builder singleChoiceDialog =
                 new AlertDialog.Builder(EditorActivity.this);
-        singleChoiceDialog.setTitle(R.string.questionnaire_dialog_title);
+        singleChoiceDialog.setTitle(R.string.selectType);
 
         singleChoiceDialog.setSingleChoiceItems(items, 0,
                 new DialogInterface.OnClickListener() {

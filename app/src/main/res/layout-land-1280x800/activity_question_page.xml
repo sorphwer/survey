@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:id="@+id/ly"
-        android:layout_width="320dp"
+        android:layout_width="720dp"
         android:layout_height="500dp"
         android:orientation="vertical">
 
@@ -61,5 +61,6 @@
         android:background="#99008577"
         android:layout_below="@id/ly"
         android:onClick="next"
+        android:layout_marginLeft="200dp"
         android:text="@string/next" />
 </RelativeLayout>

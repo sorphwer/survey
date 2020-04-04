@@ -26,7 +26,7 @@
 
     <string name="editor_new">New</string>
     <string name="editor_delete">Delete</string>
-    <string name="editor_SaveExit">Delete&amp;Exit</string>
+    <string name="editor_SaveExit">Save &amp;Exit</string>
 
     <string name="title">WELCOME TO</string>
     <string name="subtitle">TAKE PART IN OUR SURVEY!</string>
@@ -58,5 +58,11 @@
 
     <string name="unlockSuccess">unlock successfully</string>
     <string name="unlockfailed">unlock failed</string>
+
+    <string name="selectType">Select question type</string>
+
+    <string name="fillin">Fill-in</string>
+    <string name="multiple">Multiple</string>
+    <string name="single">Single</string>
 
 </resources>

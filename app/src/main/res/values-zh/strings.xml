@@ -38,4 +38,27 @@
     <string name="insidesave">存储到APP</string>
     <string name="sdsave">存储到SD卡</string>
     <string name="finish">退出</string>
+
+    <string name="fillinHint">输入标题</string>
+    <string name="idHint">输入id</string>
+
+
+    <string name="newFillin">新建填空题</string>
+    <string name="newMulti">新建多选题</string>
+    <string name="newSingle">C新建单选题</string>
+
+    <string name="optionshint">输入选项，以空格分开</string>
+    <string name="cancle">取消</string>
+
+    <string name="next">下一题</string>
+
+    <string name="emptyWarn">答案不能为空</string>
+
+    <string name="unlockSuccess">解锁成功</string>
+    <string name="unlockfailed">解锁失败</string>
+
+    <string name="selectType">选择题型</string>
+    <string name="fillin">填空题</string>
+    <string name="multiple">多选题</string>
+    <string name="single">单选题</string>
 </resources>
